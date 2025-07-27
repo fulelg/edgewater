@@ -1,0 +1,496 @@
+/* Инициализация шрифтов */
+
+/* Gwendolyn */
+@font-face {
+    font-family: 'Gwendolyn';
+    src: url('fonts/Gwendolyn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gwendolyn';
+    src: url('fonts/Gwendolyn-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Manrope */
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/Manrope-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/Manrope-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/Manrope-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/Manrope-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/Manrope-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/Manrope-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/Manrope-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* MeieScript */
+@font-face {
+    font-family: 'MeieScript';
+    src: url('fonts/MeieScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Kugile */
+@font-face {
+    font-family: 'Kugile';
+    src: url('fonts/Kugile.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* AW Conqueror Std Didot */
+@font-face {
+    font-family: 'AWConquerorStdDidot';
+    src: url('fonts/awconqueror-std-didot.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #f8f9fa;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    background-image: url('img/Copy of A_Pti4ka_1 1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    padding: 62px 100px 0 100px;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+}
+
+.menu-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu-item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.contact-us {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 18px;
+    margin-left: 62px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.header-title {
+    font-family: 'Kugile', serif;
+    font-size: 60px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.header-subtitle {
+    font-family: 'Kugile', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Section 1 */
+.section-1 {
+    background-color: #fff;
+    padding: 145px 133px 0 133px;
+}
+
+.section-1-brochure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.section-1-brochure-title {
+    font-family: 'MeieScript', serif;
+    font-size: 50px;
+    font-weight: 400;
+    color: #000000;
+    max-width: 778px;
+    text-align: center;
+    margin-bottom: 20px;
+}   
+
+.section-1-brochure-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    max-width: 680px;
+    text-align: center;
+    height: 86px;
+    margin-bottom: 16px;
+}
+
+.section-1-brochure-button {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    padding: 14px 36px;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.section-1-info-panel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    margin-top: 80px;
+    padding: 40px 60px;
+    position: relative;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: 0 20px;
+}
+
+.info-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3F3F3F;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+}
+
+.info-main {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.info-sub {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.info-divider {
+    width: 1px;
+    height: 89px;
+    background-color: #3F3F3F;
+    margin: 0 40px;
+    margin-top: 38px;
+}
+
+.info-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.nav-arrow {
+    width: 46px;
+    height: 46px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 97px;
+}
+
+/* Section 2 */
+.section-2 {
+    background-color: #fff;
+    height: 590px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.section-2-content {
+    display: flex;
+    width: 100%;
+    padding: 0 133px 0 88px;
+}
+
+.section-2-text {
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-main {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 20%;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.text-sub {
+    font-family: 'Gwendolyn', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.section-2-slider {
+    flex: 1;
+    position: relative;
+    height: 100%;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 20%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slider-image {
+    width: 95%;
+    height: 100%;
+    /* object-fit: contain; */
+}
+
+.slider-nav-arrow {
+    position: absolute;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.slider-nav-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.slider-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 85px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #fff;
+}
+
+/* Section 3 - Second Slider */
+.section-3 {
+    background-color: #fff;
+    height: 590px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 132px;
+}
+
+.section-3-content {
+    display: flex;
+    width: 100%;
+    padding: 0 133px 0 88px;
+}
+
+.section-3-text {
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-3-slider {
+    flex: 1;
+    position: relative;
+    height: 100%;
+}
+
+.section-3-slider .slider-image {
+    margin-left: 70px;
+}
+
+/* Reverse slider track */
+.slider-track-reverse {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Reverse navigation arrow */
+.slider-nav-arrow-reverse {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.slider-nav-arrow-reverse:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
