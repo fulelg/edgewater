@@ -494,3 +494,138 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Section 4 */
+
+.section-4 {
+    background-color: #fff;
+    padding-left: 100px;
+    margin-bottom: 90px;
+}
+
+.section-4-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-4-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-4-title {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.amenities-gallery {
+    width: 100%;
+    position: relative;
+}
+
+.amenities-slider {
+    width: 100%;
+    overflow: hidden;
+    padding-right: 15%; /* Уменьшаем, чтобы показать только маленькую часть 5-го элемента */
+}
+
+.amenities-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 120%; /* Уменьшаем ширину трека */
+    gap: 13px;
+}
+
+.amenity-item {
+    flex: 0 0 calc(0% - 32px); /* 5 элементов по 20% каждый */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.amenity-image {
+    width: 315px;
+    height: 410px;
+    object-fit: cover;
+    margin-bottom: 33px;
+}
+
+.amenity-title {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.amenities-navigation {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.amenity-nav-arrow {
+    width: 29px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.amenity-nav-arrow:first-child {
+    margin-right: 10px;
+}
+
+.amenity-nav-arrow:hover {
+    transform: scale(1.1);
+}
+
+.amenity-nav-arrow img {
+    width: 100%;
+}
+
+/* Section 5 */
+.section-5 {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0 100px;
+}
+
+.section-5-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-5-title {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #000;
+    align-self: center;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+}
+
+.section-5-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-5-image img {
+    width: 100%;
+    height: 593px;
+}   

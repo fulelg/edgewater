@@ -73,6 +73,47 @@ class Slider {
     }
 }
 
+class AmenitiesGallery {
+    constructor() {
+        this.currentIndex = 0;
+        this.totalItems = 5; // Изменено с 4 на 5
+        this.track = document.querySelector('.amenities-track');
+        this.prevButton = document.querySelector('.amenity-prev');
+        this.nextButton = document.querySelector('.amenity-next');
+        
+        this.init();
+    }
+    
+    init() {
+        if (this.prevButton) {
+            this.prevButton.addEventListener('click', () => {
+                this.prevItem();
+            });
+        }
+        
+        if (this.nextButton) {
+            this.nextButton.addEventListener('click', () => {
+                this.nextItem();
+            });
+        }
+    }
+    
+    nextItem() {
+        this.currentIndex = (this.currentIndex + 1) % this.totalItems;
+        this.updateGallery();
+    }
+    
+    prevItem() {
+        this.currentIndex = this.currentIndex === 0 ? this.totalItems - 1 : this.currentIndex - 1;
+        this.updateGallery();
+    }
+    
+    updateGallery() {
+        const translateX = -this.currentIndex * 20; // 20% на каждый элемент (5 элементов)
+        this.track.style.transform = `translateX(${translateX}%)`;
+    }
+}
+
 // Инициализация слайдеров при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     // Первый слайдер (обычное направление)
@@ -80,4 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Второй слайдер (обратное направление)
     new Slider('.section-3-slider', '.slider-track-reverse', '.section-3-slider .indicator', 'prevSlide', true);
+    
+    // Галерея удобств
+    new AmenitiesGallery();
 }); 
