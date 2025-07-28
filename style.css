@@ -649,7 +649,7 @@ body {
 .section-6 {
     background-color: #fff;
     padding-left: 100px;
-    margin-bottom: 90px;
+    margin-bottom: 102px;
 }
 
 .section-6-content {
@@ -767,10 +767,143 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    margin: 0 auto; /* Центрируем кнопку */
+    margin-left: 0 auto;
+    transform: translateX(-42%);
 }
 
 .visit-website-btn:hover {
     background-color: #000;
     color: #fff;
 }   
+
+/* Section 7 - Dubai Islands Info */
+.section-7 {
+    background-color: #fff;
+    margin-bottom: 154px;
+}
+
+.section-7-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-7-info {
+    margin-bottom: 85px;
+    max-width: 800px;
+}
+
+.section-7-header {
+    margin-bottom: 30px;
+}
+
+.section-7-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #000;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+.section-7-title {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 77px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 25px;
+    line-height: 100%;
+}
+
+.section-7-description {
+    margin-bottom: 35px;
+}
+
+.section-7-description p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 136px;
+    line-height: 119%;
+}
+
+.google-maps-btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px 26px;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.google-maps-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.section-7-distances {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 113px;
+}
+
+.distance-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    max-width: fit-content;
+}
+
+.distance-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.distance-icon {
+    margin-right: 34px;
+}
+
+.distance-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.distance-time {
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+    line-height: 119%;
+}
+
+.distance-name {
+    font-family: 'AWConquerorStdDidot', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    line-height: 119%;
+    letter-spacing: 0;
+}   
+
+.footer-image {
+    width: 100%;
+    height: 626px;
+    object-fit: cover;
+}
