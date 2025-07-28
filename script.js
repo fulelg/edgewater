@@ -114,6 +114,47 @@ class AmenitiesGallery {
     }
 }
 
+class ProjectsGallery {
+    constructor() {
+        this.currentIndex = 0;
+        this.totalItems = 5;
+        this.track = document.querySelector('.projects-track');
+        this.prevButton = document.querySelector('.project-prev');
+        this.nextButton = document.querySelector('.project-next');
+        
+        this.init();
+    }
+    
+    init() {
+        if (this.prevButton) {
+            this.prevButton.addEventListener('click', () => {
+                this.prevItem();
+            });
+        }
+        
+        if (this.nextButton) {
+            this.nextButton.addEventListener('click', () => {
+                this.nextItem();
+            });
+        }
+    }
+    
+    nextItem() {
+        this.currentIndex = (this.currentIndex + 1) % this.totalItems;
+        this.updateGallery();
+    }
+    
+    prevItem() {
+        this.currentIndex = this.currentIndex === 0 ? this.totalItems - 1 : this.currentIndex - 1;
+        this.updateGallery();
+    }
+    
+    updateGallery() {
+        const translateX = -this.currentIndex * 20; // 20% на каждый элемент (5 элементов)
+        this.track.style.transform = `translateX(${translateX}%)`;
+    }
+}
+
 // Инициализация слайдеров при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     // Первый слайдер (обычное направление)
@@ -124,4 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Галерея удобств
     new AmenitiesGallery();
+    
+    // Галерея проектов
+    new ProjectsGallery();
 }); 
