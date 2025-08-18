@@ -76,7 +76,7 @@ class Slider {
 class AmenitiesGallery {
     constructor() {
         this.currentIndex = 0;
-        this.totalItems = 5; // Изменено с 4 на 5
+        this.totalItems = 1;
         this.track = document.querySelector('.amenities-track');
         this.prevButton = document.querySelector('.amenity-prev');
         this.nextButton = document.querySelector('.amenity-next');
