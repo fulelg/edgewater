@@ -115,6 +115,7 @@ body {
     text-align: center;
     height: 100vh;
     position: relative;
+    overflow: hidden;
     background-image: url('img/Copy of A_Pti4ka_1 1.png');
     background-size: cover;
     background-position: center;
@@ -132,6 +133,7 @@ body {
     z-index: 1;
 }
 
+/* Menu logo */
 .menu {
     display: flex;
     justify-content: end;
@@ -139,6 +141,19 @@ body {
     position: relative;
     z-index: 2;
     align-items: center;
+    gap: 50px;
+}
+
+.menu-logo {
+    margin-right: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+.menu-logo img {
+    height: 64px;
+    width: auto;
+    display: block;
 }
 
 .menu-item {
@@ -200,27 +215,61 @@ body {
     text-transform: uppercase;
 }
 
+/* Header video */
+.header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
 /* Section 1 */
 .section-1 {
     background-color: #fff;
     padding: 145px 133px 0 133px;
+    margin-bottom: 100px;
 }
 
-.section-1-brochure {
-    display: flex;
-    flex-direction: column;
+/* Section 1 layout update */
+.section-1-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.section-1-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+}
+
+.section-1-media-img {
+    width: 100%;
+    height: 328px;
+    object-fit: cover;
+    display: block;
+}
+
+/* tighten brochure spacing for new layout */
+.section-1-brochure {
+    max-width: 564px;
+    padding-left: 0;
 }
 
 .section-1-brochure-title {
-    font-family: 'MeieScript', serif;
-    font-size: 50px;
-    font-weight: 400;
+    font-family: 'Manrope', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
     color: #000000;
-    max-width: 778px;
-    text-align: center;
+    max-width: 464px;
+    text-align: left;
     margin-bottom: 20px;
 }   
 
@@ -229,8 +278,8 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: #000000;
-    max-width: 680px;
-    text-align: center;
+    max-width: 464px;
+    text-align: left;
     height: 86px;
     margin-bottom: 16px;
 }
@@ -253,13 +302,23 @@ body {
 }
 
 .section-1-info-panel {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     background-color: #fff;
-    margin-top: 80px;
     padding: 40px 60px;
     position: relative;
+    grid-column: 1 / -1;
+}
+
+/* Section 1 info panel inner container */
+.section-1-info-panel-inner {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .info-section {
@@ -281,7 +340,7 @@ body {
 }
 
 .info-main {
-    font-family: 'AWConquerorStdDidot', serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 32px;
     font-weight: 400;
     color: #000;
@@ -290,7 +349,7 @@ body {
 }
 
 .info-sub {
-    font-family: 'AWConquerorStdDidot', serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #000;
