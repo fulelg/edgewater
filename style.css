@@ -1373,7 +1373,7 @@ body {
 
 	/* Section 4 (Amenities) */
 	.section-4 { padding-left: 20px; padding-right: 20px; margin-bottom: 40px; }
-	.section-4-title { font-size: 28px; }
+	.section-4-title { font-size: 20px; font-weight: 500; }
     .section-4-header { margin-bottom: 27px; }
 	.amenities-slider { overflow: visible; padding-right: 0; }
 	.amenities-track { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; transition: none; transform: none !important; }
@@ -1430,4 +1430,9 @@ body {
     .location-button {
         display: none;
     }
+
+	/* Section 5 (Coming soon) */
+	.section-5 { margin-bottom: 60px; }
+	.section-5-title { font-size: 20px; font-weight: 500; margin-bottom: 18px; }
+	.section-5-image img { height: 280px; object-fit: cover; }
 }
