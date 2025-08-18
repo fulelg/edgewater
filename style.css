@@ -1307,7 +1307,7 @@ body {
 	.section-1-info-panel-inner .info-section:first-of-type { grid-column: 1 / -1; }
 	.info-divider { display: none; }
 	.info-label { font-size: 10px; letter-spacing: 0.8px; margin-bottom: 6px; }
-	.info-main { font-size: 16px; font-weight: 400; }
+	.info-main { font-size: 14px; font-weight: 400; }
     .info-section:first-of-type .info-main { display: none; }
 	.info-sub { font-size: 13px; }
 
@@ -1327,7 +1327,7 @@ body {
 	.slider-nav-arrow, .section-2 .slider-indicators { display: none; }
 
 	/* Section 3 */
-	.section-3 { height: auto; margin-bottom: 16px; }
+	.section-3 { height: auto; margin-bottom: 36px; }
 	.section-3-content { position: relative; padding: 0; display: block; }
 	.section-3-text { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 2; }
 	.section-3 .vertical-text { writing-mode: horizontal-tb; transform: none; align-items: center; }
@@ -1370,4 +1370,20 @@ body {
 	}
 	.section-2 .indicator,
 	.section-3 .indicator { width: 48px; height: 3px; }
+
+	/* Section 4 (Amenities) */
+	.section-4 { padding-left: 20px; padding-right: 20px; margin-bottom: 40px; }
+	.section-4-title { font-size: 28px; }
+    .section-4-header { margin-bottom: 27px; }
+	.amenities-slider { overflow: visible; padding-right: 0; }
+	.amenities-track { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; transition: none; transform: none !important; }
+	.amenity-item { flex: initial; }
+	.amenity-image { width: 100%; height: 260px; object-fit: cover; margin-bottom: 10px; }
+	.amenity-title { font-size: 14px; }
+
+	/* Section 4 as swipe slider on mobile */
+	.amenities-track { display: flex; width: 400%; }
+	.amenity-item { flex: 0 0 25%; }
+	.amenities-indicators { display: flex; bottom: 12px; position: relative; justify-content: center; margin-top: 10px; }
+	.amenities-indicators .indicator { width: 40px; height: 3px; }
 }

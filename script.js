@@ -238,6 +238,8 @@ window.addEventListener('DOMContentLoaded', () => {
   if (isMobile) {
     enableSwipeSlider('.section-2 .slider-track', 5, false, '.section-2 .indicator');
     enableSwipeSlider('.section-3 .slider-track-reverse', 5, true, '.section-3 .indicator');
+    // Amenities: 4 карточки => 4 слайда
+    enableSwipeSlider('.amenities-track', 4, false, '.amenities-indicators .indicator');
   }
 });
 
