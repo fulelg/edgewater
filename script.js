@@ -155,6 +155,68 @@ class ProjectsGallery {
     }
 }
 
+function enableSwipeSlider(trackSelector, slidesCount, isReverse = false, indicatorsSelector) {
+  const track = document.querySelector(trackSelector);
+  if (!track) return;
+  let current = isReverse ? slidesCount - 1 : 0;
+  let startX = 0;
+  let isTouch = false;
+
+  const container = track.parentElement; // .slider-container
+  const indicators = indicatorsSelector ? document.querySelectorAll(indicatorsSelector) : null;
+
+  function setActiveDot() {
+    if (!indicators) return;
+    indicators.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function update() {
+    const step = 100 / slidesCount; // ширина одного слайда в процентах
+    const percent = -current * step;
+    track.style.transition = 'transform 0.35s ease';
+    track.style.transform = `translateX(${percent}%)`;
+    setActiveDot();
+  }
+
+  function onStart(e) {
+    isTouch = true;
+    startX = (e.touches ? e.touches[0].clientX : e.clientX);
+    track.style.transition = 'none';
+  }
+  function onMove(e) {
+    if (!isTouch) return;
+    const x = (e.touches ? e.touches[0].clientX : e.clientX);
+    const dx = x - startX;
+    const percentDx = (dx / container.clientWidth) * (100 / slidesCount);
+    const step = 100 / slidesCount;
+    const base = -current * step;
+    track.style.transform = `translateX(${base + percentDx}%)`;
+  }
+  function onEnd(e) {
+    if (!isTouch) return;
+    isTouch = false;
+    const x = (e.changedTouches ? e.changedTouches[0].clientX : e.clientX);
+    const dx = x - startX;
+    const threshold = container.clientWidth * 0.15;
+
+    if (Math.abs(dx) > threshold) {
+      if (dx < 0) current = Math.min(current + 1, slidesCount - 1);
+      else current = Math.max(current - 1, 0);
+    }
+    update();
+  }
+
+  container.addEventListener('touchstart', onStart, { passive: true });
+  container.addEventListener('touchmove', onMove, { passive: true });
+  container.addEventListener('touchend', onEnd);
+  container.addEventListener('mousedown', onStart);
+  container.addEventListener('mousemove', onMove);
+  container.addEventListener('mouseup', onEnd);
+  container.addEventListener('mouseleave', onEnd);
+
+  update();
+}
+
 // Инициализация слайдеров при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     // Первый слайдер (обычное направление)
@@ -169,6 +231,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Галерея проектов
     new ProjectsGallery();
 }); 
+
+// Инициализация свайп-слайдеров на мобильных
+window.addEventListener('DOMContentLoaded', () => {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (isMobile) {
+    enableSwipeSlider('.section-2 .slider-track', 5, false, '.section-2 .indicator');
+    enableSwipeSlider('.section-3 .slider-track-reverse', 5, true, '.section-3 .indicator');
+  }
+});
 
 // Mobile menu toggle
 window.addEventListener('DOMContentLoaded', () => {

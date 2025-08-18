@@ -464,6 +464,9 @@ body {
     /* object-fit: contain; */
 }
 
+/* Desktop: ensure full width slide image */
+.slider-image { width: 100%; height: 100%; }
+
 .slider-nav-arrow {
     position: absolute;
     top: 50%;
@@ -1307,4 +1310,64 @@ body {
 	.info-main { font-size: 16px; font-weight: 400; }
     .info-section:first-of-type .info-main { display: none; }
 	.info-sub { font-size: 13px; }
+
+	/* Section 2 */
+	.section-2 { height: auto; margin-bottom: 16px; }
+	.section-2-content { position: relative; padding: 0; display: block; }
+	.section-2-text { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 2; }
+	.vertical-text { writing-mode: horizontal-tb; transform: none; align-items: center; }
+	.text-main { font-size: 18px; color: #fff; letter-spacing: .12em; }
+	.text-sub { font-size: 16px; color: #fff; margin-top: 2px; }
+
+	.section-2-slider { height: auto; }
+	.section-2 .slider-container { height: auto; }
+	.section-2 .slider-track { display: flex; width: 500%; height: auto; }
+	.section-2 .slide { width: 20%; height: auto; }
+	.section-2 .slider-image { width: 100%; height: auto; margin-left: 0; display: block; }
+	.slider-nav-arrow, .section-2 .slider-indicators { display: none; }
+
+	/* Section 3 */
+	.section-3 { height: auto; margin-bottom: 16px; }
+	.section-3-content { position: relative; padding: 0; display: block; }
+	.section-3-text { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 2; }
+	.section-3 .vertical-text { writing-mode: horizontal-tb; transform: none; align-items: center; }
+	.section-3 .text-main { font-size: 18px; color: #fff; letter-spacing: .12em; }
+	.section-3 .text-sub { font-size: 16px; color: #fff; margin-top: 2px; }
+
+	.section-3-slider { height: auto; }
+	.section-3 .slider-container { height: auto; }
+	.slider-track-reverse { display: flex; width: 500%; height: auto; }
+	.section-3 .slide { width: 20%; height: auto; }
+	.section-3 .slider-image { width: 100%; height: auto; margin-left: 0; display: block; }
+	.slider-nav-arrow-reverse, .section-3 .slider-indicators { display: none; }
+
+	/* show indicators on mobile, hide only arrows */
+	.slider-nav-arrow { display: none; }
+	.slider-nav-arrow-reverse { display: none; }
+
+	/* indicators position for mobile */
+	.section-2 .slider-indicators,
+	.section-3 .slider-indicators { bottom: 12px; }
+	.section-2 .indicator,
+	.section-3 .indicator { width: 48px; height: 3px; }
+}
+
+/* Ensure slide images fill container without gaps */
+.section-2 .slider-image,
+.section-3 .slider-image {
+	width: 100% !important;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+@media (max-width: 768px) {
+	/* force show dots on mobile */
+	.section-2 .slider-indicators,
+	.section-3 .slider-indicators {
+		display: flex !important;
+		bottom: 12px;
+	}
+	.section-2 .indicator,
+	.section-3 .indicator { width: 48px; height: 3px; }
 }
