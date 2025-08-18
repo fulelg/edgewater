@@ -1382,17 +1382,17 @@ body {
 	.section-3 .indicator { width: 48px; height: 3px; }
 
 		/* Section 4 (Amenities) */
-	.section-4 { padding-left: 20px; padding-right: 20px; margin-bottom: 40px; }
+	.section-4 { padding-left: 20px; padding-right: 20px; margin-bottom: 40px; overflow: hidden; }
 	.section-4-title { font-size: 20px; font-weight: 500; }
     	.section-4-header { margin-bottom: 27px; }
 	.amenities-slider { overflow: hidden; padding-right: 0; }
-	.amenities-track { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; transition: none; transform: none !important; }
+	.amenities-track { width: 100%; gap: 16px; }
 	.amenity-item { flex: initial; }
 	.amenity-image { width: 100%; height: 260px; object-fit: cover; margin-bottom: 10px; }
 	.amenity-title { font-size: 14px; }
 
 	/* Section 4 as swipe slider on mobile */
-	.amenities-track { display: flex; width: 400%; }
+	.amenities-track { display: flex; width: 400%; transition: transform .35s ease; }
 	.amenity-item { flex: 0 0 25%; }
 	.amenities-indicators { display: flex; bottom: 12px; position: relative; justify-content: center; margin-top: 10px; }
 	.amenities-indicators .indicator { width: 40px; height: 3px; }

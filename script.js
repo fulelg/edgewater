@@ -217,6 +217,80 @@ function enableSwipeSlider(trackSelector, slidesCount, isReverse = false, indica
   update();
 }
 
+function enableSwipeSliderByItemWidth(trackSelector, itemSelector) {
+    const track = document.querySelector(trackSelector);
+    if (!track) return;
+    const container = track.parentElement;
+    const items = track.querySelectorAll(itemSelector);
+    if (items.length === 0) return;
+
+    const getGap = () => {
+        const cs = getComputedStyle(track);
+        const g = (cs.gap || cs.columnGap || '0').toString();
+        const val = parseFloat(g);
+        return isNaN(val) ? 0 : val;
+    };
+
+    function measure() {
+        const gap = getGap();
+        const itemWidth = items[0].getBoundingClientRect().width;
+        const stepPx = itemWidth + gap;
+        const maxIndex = Math.max(0, Math.floor((track.scrollWidth - container.clientWidth + 1) / stepPx));
+        return { stepPx, maxIndex };
+    }
+
+    let { stepPx, maxIndex } = measure();
+    let current = 0;
+    let startX = 0;
+    let isTouch = false;
+
+    function apply() {
+        track.style.transition = 'transform 0.35s ease';
+        track.style.transform = `translateX(${-current * stepPx}px)`;
+    }
+
+    function onStart(e) {
+        isTouch = true;
+        startX = (e.touches ? e.touches[0].clientX : e.clientX);
+        track.style.transition = 'none';
+    }
+    function onMove(e) {
+        if (!isTouch) return;
+        const x = (e.touches ? e.touches[0].clientX : e.clientX);
+        const dx = x - startX;
+        track.style.transform = `translateX(${(-current * stepPx) + dx}px)`;
+    }
+    function onEnd(e) {
+        if (!isTouch) return;
+        isTouch = false;
+        const x = (e.changedTouches ? e.changedTouches[0].clientX : e.clientX);
+        const dx = x - startX;
+        const threshold = container.clientWidth * 0.15;
+        if (Math.abs(dx) > threshold) {
+            if (dx < 0) current = Math.min(current + 1, maxIndex);
+            else current = Math.max(current - 1, 0);
+        }
+        apply();
+    }
+
+    window.addEventListener('resize', () => {
+        const m = measure();
+        stepPx = m.stepPx;
+        maxIndex = m.maxIndex;
+        apply();
+    });
+
+    container.addEventListener('touchstart', onStart, { passive: true });
+    container.addEventListener('touchmove', onMove, { passive: true });
+    container.addEventListener('touchend', onEnd);
+    container.addEventListener('mousedown', onStart);
+    container.addEventListener('mousemove', onMove);
+    container.addEventListener('mouseup', onEnd);
+    container.addEventListener('mouseleave', onEnd);
+
+    apply();
+}
+
 // Инициализация слайдеров при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     // Первый слайдер (обычное направление)
@@ -239,12 +313,8 @@ window.addEventListener('DOMContentLoaded', () => {
     enableSwipeSlider('.section-2 .slider-track', 5, false, '.section-2 .indicator');
     enableSwipeSlider('.section-3 .slider-track-reverse', 5, true, '.section-3 .indicator');
     enableSwipeSlider('.amenities-track', 4, false, '.amenities-indicators .indicator');
-    // Для секции 6 вычислим количество карточек динамически
-    const projTrack = document.querySelector('.projects-track');
-    if (projTrack) {
-      const cards = projTrack.querySelectorAll('.project-item').length;
-      enableSwipeSlider('.projects-track', cards, false, null);
-    }
+    // Секция 6: шаг по ширине карточки (item + gap), сохраняет превью и делает свайп "большим"
+    enableSwipeSliderByItemWidth('.projects-track', '.project-item');
   }
 });
 
