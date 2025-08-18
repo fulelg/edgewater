@@ -169,3 +169,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Галерея проектов
     new ProjectsGallery();
 }); 
+
+// Mobile menu toggle
+window.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector('.burger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const closeBtn = document.querySelector('.mobile-close');
+  const links = document.querySelectorAll('.mobile-link');
+
+  function closeMenu() {
+    burger?.classList.remove('active');
+    mobileMenu?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    const opened = mobileMenu.classList.contains('open');
+    document.body.style.overflow = opened ? 'hidden' : '';
+  });
+
+  closeBtn?.addEventListener('click', closeMenu);
+  links.forEach((l) => l.addEventListener('click', closeMenu));
+}); 
