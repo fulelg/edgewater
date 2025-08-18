@@ -1386,4 +1386,48 @@ body {
 	.amenity-item { flex: 0 0 25%; }
 	.amenities-indicators { display: flex; bottom: 12px; position: relative; justify-content: center; margin-top: 10px; }
 	.amenities-indicators .indicator { width: 40px; height: 3px; }
+
+	/* Section 7 (Location) */
+	.section-7 { padding: 20px; margin-bottom: 40px; }
+	.section-7-title { font-size: 26px; text-align: center; margin-bottom: 18px; }
+	.location-content { grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }
+	.location-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+	.location-item { grid-template-columns: 20px 1fr; gap: 10px; align-items: start; }
+	.location-icon { width: 20px; height: 20px; margin-right: 0; }
+	.location-time { font-size: 18px; font-weight: 700; }
+	.location-name { font-size: 12px; }
+	.location-map img { width: 100%; height: 260px; }
+
+	/* Section 7 (Location) — типографика и размеры из макета */
+	.section-7-title {
+		font-family: 'Manrope', sans-serif;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 119%;
+		letter-spacing: 0;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 18px;
+	}
+	.location-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+	.location-item { grid-template-columns: 49.7717px 1fr; gap: 10px; align-items: start; }
+	.location-icon { width: 49.7717px; height: 43.4715px; margin-right: 0; }
+	.location-time {
+		font-family: 'Manrope', sans-serif;
+		font-weight: 600;
+		font-size: 17.64px;
+		line-height: 119%;
+		letter-spacing: 0;
+	}
+	.location-name {
+		font-family: 'AWConquerorStdDidot', serif;
+		font-weight: 400;
+		font-size: 13.86px;
+		line-height: 119%;
+		letter-spacing: 0;
+	}
+
+    .location-button {
+        display: none;
+    }
 }
