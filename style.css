@@ -826,6 +826,10 @@ body {
     width: 100%;
 }
 
+.projects-button.mobile {
+    display: none;
+}
+
 .visit-website-btn {
     background-color: #fff;
     color: #000;
@@ -1435,4 +1439,29 @@ body {
 	.section-5 { margin-bottom: 60px; }
 	.section-5-title { font-size: 20px; font-weight: 500; margin-bottom: 18px; }
 	.section-5-image img { height: 280px; object-fit: cover; }
+}
+
+/* Section 6 mobile title */
+@media (max-width: 768px) {
+	/* Section 6 (Completed projects) — макет уточнение */
+	.section-6 { padding-left: 20px; }
+	.section-6-title { font-size: 20px; font-weight: 500; text-align: center; margin-bottom: 22px; }
+    .section-6-header { margin-bottom: 0; }
+	/* один слайд + небольшой превью следующего */
+	.projects-slider { overflow: hidden; padding-right: 0; }
+	.projects-track { display: flex; gap: 16px; width: auto; transition: transform .35s ease; }
+	.project-item { flex: 0 0 calc(100% - 48px); display: flex; flex-direction: column; align-items: center; }
+	.project-image { width: 100%; height: 240px; object-fit: cover; margin-bottom: 12px; }
+
+	/* подписи под проектом */
+	.project-title { font-family: 'Manrope', sans-serif; font-size: 16px; font-weight: 600; line-height: 119%; text-transform: uppercase; margin: 0 0 6px 0; text-align: center; }
+	.project-location { font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 400; line-height: 119%; letter-spacing: 0; color: #666; text-transform: uppercase; margin: 0 0 12px 0; text-align: center; }
+
+	.projects-navigation, .projects-indicators { display: none !important; }
+
+	/* кнопка */
+	.projects-button { justify-content: center; width: 100%; margin-top: 8px; }
+	.visit-website-btn { transform: none; margin: 0; }
+    .projects-button.mobile { display: flex; padding: 8px 30px; font-size: 12px; }
+    .projects-button.mobile .visit-website-btn { padding: 8px 30px; font-size: 12px; }
 }
