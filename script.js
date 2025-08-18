@@ -270,4 +270,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
   closeBtn?.addEventListener('click', closeMenu);
   links.forEach((l) => l.addEventListener('click', closeMenu));
+
+  // Download & open brochure PDF
+  const brochureBtn = document.querySelector('.section-1-brochure-button');
+  brochureBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const url = 'pdf/Brochure.pdf';
+    // open in new tab
+    // window.open(url, '_blank');
+    // trigger download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Brochure.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
 }); 
