@@ -1275,6 +1275,11 @@ body {
     text-transform: uppercase;
 }
 
+.header-brand {
+    display: none;
+}
+
+@media (max-width: 768px) {
 /* big logo branding at bottom center */
 .header-brand {
     position: absolute;
@@ -1287,6 +1292,7 @@ body {
     height: 52px;
     width: auto;
     opacity: .9;
+}
 }
 
 /* Header responsive only */
@@ -1464,4 +1470,36 @@ body {
 	.visit-website-btn { transform: none; margin: 0; }
     .projects-button.mobile { display: flex; padding: 8px 30px; font-size: 12px; }
     .projects-button.mobile .visit-website-btn { padding: 8px 30px; font-size: 12px; }
+}
+
+/* Footer mobile layout */
+@media (max-width: 768px) {
+	.footer { padding: 20px; }
+	.footer-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"contacts navigation"
+			"messengers navigation";
+		gap: 16px 24px;
+		align-items: start;
+	}
+	.footer-section { max-width: none; }
+	.footer-section.contacts { grid-area: contacts; }
+	.footer-section.messengers { grid-area: messengers; }
+	.footer-section.navigation { grid-area: navigation; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+	.footer-section.navigation .footer-logo { order: -1; }
+
+	.footer-title-contacts { font-size: 20px; margin-bottom: 14px; }
+	.footer-title { font-size: 14px; margin-top: 10px; margin-bottom: 10px; }
+	.contact-label { font-size: 12px; margin-bottom: 6px; }
+	.contact-details, .contact-phone, .contact-email { font-size: 12px; }
+	.footer-nav { margin-bottom: 0; }
+	.footer-nav-link { font-size: 12px; }
+	.logo-icon { width: 56px; height: auto; }
+
+	.messenger-buttons { gap: 10px; }
+	.messenger-btn { padding: 8px 14px; font-size: 12px; }
+	.messenger-icon { width: 14px; height: 14px; }
+	.messenger-text { font-size: 14px; }
 }
