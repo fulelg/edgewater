@@ -271,7 +271,7 @@ body {
     max-width: 464px;
     text-align: left;
     margin-bottom: 20px;
-}   
+}
 
 .section-1-brochure-subtitle {
     font-family: 'Manrope', sans-serif;
@@ -465,7 +465,10 @@ body {
 }
 
 /* Desktop: ensure full width slide image */
-.slider-image { width: 100%; height: 100%; }
+.slider-image {
+    width: 100%;
+    height: 100%;
+}
 
 .slider-nav-arrow {
     position: absolute;
@@ -511,6 +514,23 @@ body {
     background-color: #fff;
 }
 
+/* Compact indicators for Section 3 (INTERIOR) to fit many items */
+.section-3 .slider-indicators {
+    gap: 6px;
+    width: 86%;
+    max-width: 1100px;
+}
+
+.section-3 .indicator {
+    width: auto;
+    /* override fixed width */
+    flex: 1 1 0;
+    /* distribute evenly across the row */
+    min-width: 10px;
+    /* keep visible even when many */
+    height: 3px;
+}
+
 /* Section 3 - Second Slider */
 .section-3 {
     background-color: #fff;
@@ -540,7 +560,7 @@ body {
 }
 
 .section-3-slider .slider-image {
-    margin-left: 70px;
+    /* margin-left: 70px; */
 }
 
 /* Reverse slider track */
@@ -609,18 +629,21 @@ body {
 .amenities-slider {
     width: 100%;
     overflow: hidden;
-    padding-right: 15%; /* Уменьшаем, чтобы показать только маленькую часть 5-го элемента */
+    padding-right: 15%;
+    /* Уменьшаем, чтобы показать только маленькую часть 5-го элемента */
 }
 
 .amenities-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 120%; /* Уменьшаем ширину трека */
+    width: 120%;
+    /* Уменьшаем ширину трека */
     gap: 13px;
 }
 
 .amenity-item {
-    flex: 0 0 calc(0% - 32px); /* 5 элементов по 20% каждый */
+    flex: 0 0 calc(0% - 32px);
+    /* 5 элементов по 20% каждый */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -713,7 +736,7 @@ body {
 .section-5-image img {
     width: 100%;
     height: 593px;
-}   
+}
 
 /* Section 6 - Completed Projects */
 .section-6 {
@@ -840,6 +863,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
+    text-decoration: none;
     transition: all 0.3s ease;
     margin-left: 0 auto;
     transform: translateX(-42%);
@@ -848,7 +872,7 @@ body {
 .visit-website-btn:hover {
     background-color: #000;
     color: #fff;
-}   
+}
 
 /* Section 7 - Dubai Islands Info */
 .section-7 {
@@ -974,7 +998,7 @@ body {
     margin: 0;
     line-height: 119%;
     letter-spacing: 0;
-}   
+}
 
 .footer-image {
     width: 100%;
@@ -1000,7 +1024,8 @@ body {
 
 .footer-section {
     flex: 1;
-    max-width: 300px;
+    max-width: fit-content;
+    margin-top: auto;
 }
 
 .footer-title {
@@ -1012,6 +1037,7 @@ body {
     margin-bottom: 21px;
     margin-top: 24px;
     line-height: 100%;
+    text-align: center;
 }
 
 .footer-title-contacts {
@@ -1068,6 +1094,8 @@ body {
     font-weight: 400;
     color: #fff;
     margin: 0;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* Messengers Section */
@@ -1127,9 +1155,9 @@ body {
     color: #ccc;
 }
 
-.logo-icon {
-    width: 84px;
-    height: 25px;
+.footer-logo .logo-icon {
+    width: 202px;
+    height: 102px;
 }
 
 /* New Section 7 - Location after Section 4 */
@@ -1194,7 +1222,8 @@ body {
 }
 
 .location-map img {
-    width: 644px;
+    max-width: 644px;
+    width: 100%;
     height: 344px;
     object-fit: cover;
     display: block;
@@ -1219,6 +1248,7 @@ body {
     cursor: pointer;
     z-index: 3;
 }
+
 .burger span {
     position: absolute;
     left: 0;
@@ -1227,25 +1257,47 @@ body {
     background: #fff;
     transition: transform .3s ease, opacity .3s ease, top .3s ease;
 }
-.burger span:nth-child(1) { top: 0; }
-.burger span:nth-child(2) { top: 11px; }
-.burger span:nth-child(3) { top: 22px; }
 
-.burger.active span:nth-child(1) { top: 11px; transform: rotate(45deg); }
-.burger.active span:nth-child(2) { opacity: 0; }
-.burger.active span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+.burger span:nth-child(1) {
+    top: 0;
+}
+
+.burger span:nth-child(2) {
+    top: 11px;
+}
+
+.burger span:nth-child(3) {
+    top: 22px;
+}
+
+.burger.active span:nth-child(1) {
+    top: 11px;
+    transform: rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    top: 11px;
+    transform: rotate(-45deg);
+}
 
 .mobile-menu {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.7);
+    background: rgba(0, 0, 0, .7);
     backdrop-filter: blur(2px);
     display: none;
     align-items: flex-start;
     justify-content: flex-start;
     z-index: 2;
 }
-.mobile-menu.open { display: flex; }
+
+.mobile-menu.open {
+    display: flex;
+}
 
 .mobile-menu-inner {
     width: 78%;
@@ -1257,6 +1309,7 @@ body {
     flex-direction: column;
     gap: 18px;
 }
+
 .mobile-close {
     align-self: flex-end;
     background: transparent;
@@ -1267,6 +1320,7 @@ body {
     cursor: pointer;
     margin-bottom: 8px;
 }
+
 .mobile-link {
     color: #fff;
     text-decoration: none;
@@ -1280,226 +1334,728 @@ body {
 }
 
 @media (max-width: 768px) {
-/* big logo branding at bottom center */
-.header-brand {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
-.header-brand img {
-    height: 52px;
-    width: auto;
-    opacity: .9;
-}
+
+    /* big logo branding at bottom center */
+    .header-brand {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    .header-brand img {
+        height: 52px;
+        width: auto;
+        opacity: .9;
+    }
 }
 
 /* Header responsive only */
 @media (max-width: 768px) {
-    .menu { padding: 20px; gap: 12px; }
-    .menu-logo img { display: none; }
-    .menu-item { display: none; }
-    .burger { display: inline-block; }
-    .contact-us { padding: 8px 14px; font-size: 13px; margin-left: auto; }
+    .menu {
+        padding: 20px;
+        gap: 12px;
+    }
 
-	/* Section 1 mobile */
-	.section-1 { padding: 40px 20px 0 20px; }
-	.section-1-content { display: grid; grid-template-columns: 1fr; gap: 24px; }
-	.section-1-media { display: none; }
-	.section-1-brochure { align-items: center; text-align: center; max-width: 100%; padding-left: 0; }
-	.section-1-brochure-title { text-align: center; font-size: 28px; line-height: 120%; margin-bottom: 12px; }
-	.section-1-brochure-subtitle { text-align: center; font-size: 14px; line-height: 140%; height: auto; max-width: 320px; margin: 0 auto 16px; }
-	.section-1-brochure-button { padding: 10px 16px; font-size: 13px; }
+    .menu-logo img {
+        display: none;
+    }
 
-	.section-1-info-panel { padding: 0; }
-	.section-1-info-panel-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; justify-items: center; text-align: center; }
-	.section-1-info-panel-inner .info-section:first-of-type { grid-column: 1 / -1; }
-	.info-divider { display: none; }
-	.info-label { font-size: 10px; letter-spacing: 0.8px; margin-bottom: 6px; }
-	.info-main { font-size: 14px; font-weight: 400; }
-    .info-section:first-of-type .info-main { display: none; }
-	.info-sub { font-size: 13px; }
+    .menu-item {
+        display: none;
+    }
 
-	/* Section 2 */
-	.section-2 { height: auto; margin-bottom: 16px; }
-	.section-2-content { position: relative; padding: 0; display: block; }
-	.section-2-text { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 2; }
-	.vertical-text { writing-mode: horizontal-tb; transform: none; align-items: center; }
-	.text-main { font-size: 18px; color: #fff; letter-spacing: .12em; }
-	.text-sub { font-size: 16px; color: #fff; margin-top: 2px; }
+    .burger {
+        display: inline-block;
+    }
 
-	.section-2-slider { height: auto; }
-	.section-2 .slider-container { height: auto; }
-	.section-2 .slider-track { display: flex; width: 500%; height: auto; }
-	.section-2 .slide { width: 20%; height: auto; }
-	.section-2 .slider-image { width: 100%; height: auto; margin-left: 0; display: block; }
-	.slider-nav-arrow, .section-2 .slider-indicators { display: none; }
+    .contact-us {
+        padding: 8px 14px;
+        font-size: 13px;
+        margin-left: auto;
+    }
 
-	/* Section 3 */
-	.section-3 { height: auto; margin-bottom: 36px; }
-	.section-3-content { position: relative; padding: 0; display: block; }
-	.section-3-text { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 2; }
-	.section-3 .vertical-text { writing-mode: horizontal-tb; transform: none; align-items: center; }
-	.section-3 .text-main { font-size: 18px; color: #fff; letter-spacing: .12em; }
-	.section-3 .text-sub { font-size: 16px; color: #fff; margin-top: 2px; }
+    /* Section 1 mobile */
+    .section-1 {
+        padding: 40px 20px 0 20px;
+    }
 
-	.section-3-slider { height: auto; }
-	.section-3 .slider-container { height: auto; }
-	.slider-track-reverse { display: flex; width: 500%; height: auto; }
-	.section-3 .slide { width: 20%; height: auto; }
-	.section-3 .slider-image { width: 100%; height: auto; margin-left: 0; display: block; }
-	.slider-nav-arrow-reverse, .section-3 .slider-indicators { display: none; }
+    .section-1-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
 
-	/* show indicators on mobile, hide only arrows */
-	.slider-nav-arrow { display: none; }
-	.slider-nav-arrow-reverse { display: none; }
+    .section-1-media {
+        display: none;
+    }
 
-	/* indicators position for mobile */
-	.section-2 .slider-indicators,
-	.section-3 .slider-indicators { bottom: 12px; }
-	.section-2 .indicator,
-	.section-3 .indicator { width: 48px; height: 3px; }
+    .section-1-brochure {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .section-1-brochure-title {
+        text-align: center;
+        font-size: 28px;
+        line-height: 120%;
+        margin-bottom: 12px;
+    }
+
+    .section-1-brochure-subtitle {
+        text-align: center;
+        font-size: 14px;
+        line-height: 140%;
+        height: auto;
+        max-width: 320px;
+        margin: 0 auto 16px;
+    }
+
+    .section-1-brochure-button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .section-1-info-panel {
+        padding: 0;
+    }
+
+    .section-1-info-panel-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .section-1-info-panel-inner .info-section:first-of-type {
+        grid-column: 1 / -1;
+    }
+
+    .info-divider {
+        display: none;
+    }
+
+    .info-label {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        margin-bottom: 6px;
+    }
+
+    .info-main {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .info-section:first-of-type .info-main {
+        display: none;
+    }
+
+    .info-sub {
+        font-size: 13px;
+    }
+
+    /* Section 2 */
+    .section-2 {
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    .section-2-content {
+        position: relative;
+        padding: 0;
+        display: block;
+    }
+
+    .section-2-text {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        align-items: center;
+    }
+
+    .text-main {
+        font-size: 18px;
+        color: #fff;
+        letter-spacing: .12em;
+    }
+
+    .text-sub {
+        font-size: 16px;
+        color: #fff;
+        margin-top: 2px;
+    }
+
+    .section-2-slider {
+        height: auto;
+    }
+
+    .section-2 .slider-container {
+        height: auto;
+    }
+
+    .section-2 .slider-track {
+        display: flex;
+        width: 500%;
+        height: auto;
+    }
+
+    .section-2 .slide {
+        width: 20%;
+        height: auto;
+    }
+
+    .section-2 .slider-image {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        display: block;
+    }
+
+    .slider-nav-arrow,
+    .section-2 .slider-indicators {
+        display: none;
+    }
+
+    /* Section 3 */
+    .section-3 {
+        height: auto;
+        margin-bottom: 36px;
+    }
+
+    .section-3-content {
+        position: relative;
+        padding: 0;
+        display: block;
+    }
+
+    .section-3-text {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    .section-3 .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        align-items: center;
+    }
+
+    .section-3 .text-main {
+        font-size: 18px;
+        color: #fff;
+        letter-spacing: .12em;
+    }
+
+    .section-3 .text-sub {
+        font-size: 16px;
+        color: #fff;
+        margin-top: 2px;
+    }
+
+    .section-3-slider {
+        height: auto;
+    }
+
+    .section-3 .slider-container {
+        height: auto;
+    }
+
+    .slider-track-reverse {
+        display: flex;
+        width: 500%;
+        height: auto;
+    }
+
+    .section-3 .slide {
+        width: 20%;
+        height: auto;
+    }
+
+    .section-3 .slider-image {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        display: block;
+    }
+
+    .slider-nav-arrow-reverse,
+    .section-3 .slider-indicators {
+        display: none;
+    }
+
+    /* show indicators on mobile, hide only arrows */
+    .slider-nav-arrow {
+        display: none;
+    }
+
+    .slider-nav-arrow-reverse {
+        display: none;
+    }
+
+    /* indicators position for mobile */
+    .section-2 .slider-indicators,
+    .section-3 .slider-indicators {
+        bottom: 12px;
+    }
+
+    .section-2 .indicator,
+    .section-3 .indicator {
+        width: 48px;
+        height: 3px;
+    }
+
+    /* Override for Section 3 on mobile: make indicators flexible to fit 21 */
+    .section-3 .slider-indicators {
+        gap: 4px;
+        width: 92%;
+        max-width: none;
+        bottom: 10px;
+    }
+
+    .section-3 .indicator {
+        width: auto;
+        flex: 1 1 0;
+        min-width: 6px;
+        height: 2px;
+    }
 }
 
 /* Ensure slide images fill container without gaps */
 .section-2 .slider-image,
 .section-3 .slider-image {
-	width: 100% !important;
-	height: 100%;
-	object-fit: cover;
-	display: block;
+    width: 100% !important;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 @media (max-width: 768px) {
-	/* force show dots on mobile */
-	.section-2 .slider-indicators,
-	.section-3 .slider-indicators {
-		display: flex !important;
-		bottom: 12px;
-	}
-	.section-2 .indicator,
-	.section-3 .indicator { width: 48px; height: 3px; }
 
-		/* Section 4 (Amenities) */
-	.section-4 { padding-left: 20px; padding-right: 20px; margin-bottom: 40px; overflow: hidden; }
-	.section-4-title { font-size: 20px; font-weight: 500; }
-    	.section-4-header { margin-bottom: 27px; }
-	.amenities-slider { overflow: hidden; padding-right: 0; }
-	.amenities-track { width: 100%; gap: 16px; }
-	.amenity-item { flex: initial; }
-	.amenity-image { width: 100%; height: 260px; object-fit: cover; margin-bottom: 10px; }
-	.amenity-title { font-size: 14px; }
+    /* force show dots on mobile */
+    .section-2 .slider-indicators,
+    .section-3 .slider-indicators {
+        display: flex !important;
+        bottom: 12px;
+    }
 
-	/* Section 4 as swipe slider on mobile */
-	.amenities-track { display: flex; width: 400%; transition: transform .35s ease; }
-	.amenity-item { flex: 0 0 25%; }
-	.amenities-indicators { display: flex; bottom: 12px; position: relative; justify-content: center; margin-top: 10px; }
-	.amenities-indicators .indicator { width: 40px; height: 3px; }
+    .section-2 .indicator,
+    .section-3 .indicator {
+        width: 48px;
+        height: 3px;
+    }
 
-	/* Section 7 (Location) */
-	.section-7 { padding: 20px; margin-bottom: 40px; }
-	.section-7-title { font-size: 26px; text-align: center; margin-bottom: 18px; }
-	.location-content { grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }
-	.location-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
-	.location-item { grid-template-columns: 20px 1fr; gap: 10px; align-items: start; }
-	.location-icon { width: 20px; height: 20px; margin-right: 0; }
-	.location-time { font-size: 18px; font-weight: 700; }
-	.location-name { font-size: 12px; }
-	.location-map img { width: 100%; height: 260px; }
+    /* Section 4 (Amenities) */
+    .section-4 {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 40px;
+        overflow: hidden;
+    }
 
-	/* Section 7 (Location) — типографика и размеры из макета */
-	.section-7-title {
-		font-family: 'Manrope', sans-serif;
-		font-weight: 500;
-		font-size: 20px;
-		line-height: 119%;
-		letter-spacing: 0;
-		text-align: center;
-		text-transform: uppercase;
-		margin-bottom: 18px;
-	}
-	.location-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
-	.location-item { grid-template-columns: 49.7717px 1fr; gap: 10px; align-items: start; }
-	.location-icon { width: 49.7717px; height: 43.4715px; margin-right: 0; }
-	.location-time {
-		font-family: 'Manrope', sans-serif;
-		font-weight: 600;
-		font-size: 17.64px;
-		line-height: 119%;
-		letter-spacing: 0;
-	}
-	.location-name {
-		font-family: 'AWConquerorStdDidot', serif;
-		font-weight: 400;
-		font-size: 13.86px;
-		line-height: 119%;
-		letter-spacing: 0;
-	}
+    .section-4-title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .section-4-header {
+        margin-bottom: 27px;
+    }
+
+    .amenities-slider {
+        overflow: hidden;
+        padding-right: 0;
+    }
+
+    .amenities-track {
+        width: 100%;
+        gap: 16px;
+    }
+
+    .amenity-item {
+        flex: initial;
+    }
+
+    .amenity-image {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .amenity-title {
+        font-size: 14px;
+    }
+
+    /* Section 4 as swipe slider on mobile */
+    .amenities-track {
+        display: flex;
+        width: 400%;
+        transition: transform .35s ease;
+    }
+
+    .amenity-item {
+        flex: 0 0 25%;
+    }
+
+    .amenities-indicators {
+        display: flex;
+        bottom: 12px;
+        position: relative;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .amenities-indicators .indicator {
+        width: 40px;
+        height: 3px;
+    }
+
+    /* Section 7 (Location) */
+    .section-7 {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .section-7-title {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .location-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 24px;
+    }
+
+    .location-item {
+        grid-template-columns: 20px 1fr;
+        gap: 10px;
+        align-items: start;
+    }
+
+    .location-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 0;
+    }
+
+    .location-time {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .location-name {
+        font-size: 12px;
+    }
+
+    .location-map img {
+        width: 100%;
+        height: 260px;
+    }
+
+    /* Section 7 (Location) — типографика и размеры из макета */
+    .section-7-title {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 119%;
+        letter-spacing: 0;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+    }
+
+    .location-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 24px;
+    }
+
+    .location-item {
+        grid-template-columns: 49.7717px 1fr;
+        gap: 10px;
+        align-items: start;
+    }
+
+    .location-icon {
+        width: 49.7717px;
+        height: 43.4715px;
+        margin-right: 0;
+    }
+
+    .location-time {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 600;
+        font-size: 17.64px;
+        line-height: 119%;
+        letter-spacing: 0;
+    }
+
+    .location-name {
+        font-family: 'AWConquerorStdDidot', serif;
+        font-weight: 400;
+        font-size: 13.86px;
+        line-height: 119%;
+        letter-spacing: 0;
+    }
 
     .location-button {
         display: none;
     }
 
-	/* Section 5 (Coming soon) */
-	.section-5 { margin-bottom: 60px; }
-	.section-5-title { font-size: 20px; font-weight: 500; margin-bottom: 18px; }
-	.section-5-image img { height: 280px; object-fit: cover; }
+    /* Section 5 (Coming soon) */
+    .section-5 {
+        margin-bottom: 60px;
+    }
+
+    .section-5-title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 18px;
+    }
+
+    .section-5-image img {
+        height: 280px;
+        object-fit: cover;
+    }
 }
 
 /* Section 6 mobile title */
 @media (max-width: 768px) {
-	/* Section 6 (Completed projects) — макет уточнение */
-	.section-6 { padding-left: 20px; }
-	.section-6-title { font-size: 20px; font-weight: 500; text-align: center; margin-bottom: 22px; }
-    .section-6-header { margin-bottom: 0; }
-	/* один слайд + небольшой превью следующего */
-	.projects-slider { overflow: hidden; padding-right: 0; }
-	.projects-track { display: flex; gap: 16px; width: auto; transition: transform .35s ease; }
-	.project-item { flex: 0 0 calc(100% - 48px); display: flex; flex-direction: column; align-items: center; }
-	.project-image { width: 100%; height: 240px; object-fit: cover; margin-bottom: 12px; }
 
-	/* подписи под проектом */
-	.project-title { font-family: 'Manrope', sans-serif; font-size: 16px; font-weight: 600; line-height: 119%; text-transform: uppercase; margin: 0 0 6px 0; text-align: center; }
-	.project-location { font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 400; line-height: 119%; letter-spacing: 0; color: #666; text-transform: uppercase; margin: 0 0 12px 0; text-align: center; }
+    /* Section 6 (Completed projects) — макет уточнение */
+    .section-6 {
+        padding-left: 20px;
+    }
 
-	.projects-navigation, .projects-indicators { display: none !important; }
+    .section-6-title {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 22px;
+    }
 
-	/* кнопка */
-	.projects-button { justify-content: center; width: 100%; margin-top: 8px; }
-	.visit-website-btn { transform: none; margin: 0; }
-    .projects-button.mobile { display: flex; padding: 8px 30px; font-size: 12px; }
-    .projects-button.mobile .visit-website-btn { padding: 8px 30px; font-size: 12px; }
+    .section-6-header {
+        margin-bottom: 0;
+    }
+
+    /* один слайд + небольшой превью следующего */
+    .projects-slider {
+        overflow: hidden;
+        padding-right: 0;
+    }
+
+    .projects-track {
+        display: flex;
+        gap: 16px;
+        width: auto;
+        transition: transform .35s ease;
+    }
+
+    .project-item {
+        flex: 0 0 calc(100% - 48px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        margin-bottom: 12px;
+    }
+
+    /* подписи под проектом */
+    .project-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 119%;
+        text-transform: uppercase;
+        margin: 0 0 6px 0;
+        text-align: center;
+    }
+
+    .project-location {
+        font-family: 'Manrope', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 119%;
+        letter-spacing: 0;
+        color: #666;
+        text-transform: uppercase;
+        margin: 0 0 12px 0;
+        text-align: center;
+    }
+
+    .projects-navigation,
+    .projects-indicators {
+        display: none !important;
+    }
+
+    /* кнопка */
+    .projects-button {
+        justify-content: center;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .visit-website-btn {
+        transform: none;
+        margin: 0;
+    }
+
+    .projects-button.mobile {
+        display: flex;
+        padding: 8px 30px;
+        font-size: 12px;
+    }
+
+    .projects-button.mobile .visit-website-btn {
+        padding: 8px 30px;
+        font-size: 12px;
+    }
 }
 
 /* Footer mobile layout */
 @media (max-width: 768px) {
-	.footer { padding: 20px; }
-	.footer-content {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-areas:
-			"contacts navigation"
-			"messengers navigation";
-		gap: 16px 24px;
-		align-items: start;
-	}
-	.footer-section { max-width: none; }
-	.footer-section.contacts { grid-area: contacts; }
-	.footer-section.messengers { grid-area: messengers; }
-	.footer-section.navigation { grid-area: navigation; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
-	.footer-section.navigation .footer-logo { order: -1; }
+    .footer {
+        padding: 20px;
+    }
 
-	.footer-title-contacts { font-size: 20px; margin-bottom: 14px; }
-	.footer-title { font-size: 14px; margin-top: 10px; margin-bottom: 10px; }
-	.contact-label { font-size: 12px; margin-bottom: 6px; }
-	.contact-details, .contact-phone, .contact-email { font-size: 12px; }
-	.footer-nav { margin-bottom: 0; }
-	.footer-nav-link { font-size: 12px; }
-	.logo-icon { width: 56px; height: auto; }
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "contacts navigation"
+            "messengers navigation";
+        gap: 16px 24px;
+        align-items: start;
+    }
 
-	.messenger-buttons { gap: 10px; }
-	.messenger-btn { padding: 8px 14px; font-size: 12px; }
-	.messenger-icon { width: 14px; height: 14px; }
-	.messenger-text { font-size: 14px; }
+    .footer-section {
+        max-width: none;
+    }
+
+    .footer-section.contacts {
+        grid-area: contacts;
+    }
+
+    .footer-section.messengers {
+        grid-area: messengers;
+    }
+
+    .footer-section.navigation {
+        grid-area: navigation;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer-section.navigation .footer-logo {
+        order: -1;
+    }
+
+    .footer-title-contacts {
+        font-size: 20px;
+        margin-bottom: 14px;
+        margin-right: auto;
+    }
+
+    .footer-title {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .contact-label {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .contact-details,
+    .contact-phone,
+    .contact-email {
+        font-size: 12px;
+    }
+
+    .footer-nav {
+        margin-bottom: 0;
+    }
+
+    .footer-nav-link {
+        font-size: 12px;
+    }
+
+    .logo-icon {
+        width: 56px;
+        height: auto;
+    }
+
+    .messenger-buttons {
+        gap: 10px;
+    }
+
+    .messenger-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .messenger-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .messenger-text {
+        font-size: 14px;
+    }
+
+    .footer-logo .logo-icon {
+        display: none;
+    }
+
+    .footer-content {
+        display: flex;
+    }
+
+    .footer-title {
+        display: none;
+    }
+
+    .messenger-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .messenger-btn {
+        width: 100%;
+    }
+
+    .footer-section.navigation {
+        display: none;
+    }
 }

@@ -1,75 +1,90 @@
 class Slider {
     constructor(sliderSelector, trackSelector, indicatorsSelector, buttonId, isReverse = false) {
         this.currentSlide = 0;
-        this.totalSlides = 5;
         this.isReverse = isReverse;
-        
+
         this.sliderTrack = document.querySelector(trackSelector);
+        this.slides = this.sliderTrack ? this.sliderTrack.querySelectorAll('.slide') : [];
+        this.totalSlides = this.slides.length || 5;
+        this.stepPercent = 100 / this.totalSlides;
+
         this.indicators = document.querySelectorAll(indicatorsSelector);
         this.nextButton = document.getElementById(buttonId);
-        
+
         this.init();
     }
-    
+
     init() {
-        // Обработчик для кнопки "следующий"
-        this.nextButton.addEventListener('click', () => {
-            this.nextSlide();
-        });
-        
+        // Настройка ширины трека и слайдов под динамическое количество
+        this.applyLayout();
+
+        // Обработчик для кнопки
+        if (this.nextButton) {
+            this.nextButton.addEventListener('click', () => {
+                this.nextSlide();
+            });
+        }
+
         // Обработчики для индикаторов
         this.indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 this.goToSlide(index);
             });
         });
-        
+
+        // Установить начальное положение и активный индикатор
+        this.updateSlider();
+
         // Автоматическое переключение каждые 5 секунд
         this.autoPlay();
     }
-    
+
+    applyLayout() {
+        if (!this.sliderTrack || this.totalSlides <= 0) return;
+        // Общая ширина трека = 100% * количество слайдов
+        this.sliderTrack.style.width = `${this.totalSlides * 100}%`;
+        // Ширина каждого слайда
+        this.slides.forEach((slide) => {
+            slide.style.width = `${this.stepPercent}%`;
+        });
+    }
+
     nextSlide() {
         if (this.isReverse) {
-            // Для обратного слайдера двигаемся влево (уменьшаем индекс)
             this.currentSlide = this.currentSlide === 0 ? this.totalSlides - 1 : this.currentSlide - 1;
         } else {
-            // Для обычного слайдера двигаемся вправо (увеличиваем индекс)
             this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
         }
         this.updateSlider();
     }
-    
+
     goToSlide(index) {
         this.currentSlide = index;
         this.updateSlider();
     }
-    
+
     updateSlider() {
-        // Обновляем позицию слайдера
+        if (!this.sliderTrack) return;
+        const step = this.stepPercent || (100 / this.totalSlides);
         let translateX;
         if (this.isReverse) {
-            // Для обратного направления: начинаем с последнего слайда и двигаемся влево
-            translateX = -((this.totalSlides - 1 - this.currentSlide) * 20);
-            console.log('Reverse slider - currentSlide:', this.currentSlide, 'translateX:', translateX);
+            translateX = -((this.totalSlides - 1 - this.currentSlide) * step);
         } else {
-            translateX = -this.currentSlide * 20; // Для обычного направления
+            translateX = -(this.currentSlide * step);
         }
         this.sliderTrack.style.transform = `translateX(${translateX}%)`;
-        
+
         // Обновляем активный индикатор
         this.indicators.forEach((indicator, index) => {
-            if (index === this.currentSlide) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
+            if (index === this.currentSlide) indicator.classList.add('active');
+            else indicator.classList.remove('active');
         });
     }
-    
+
     autoPlay() {
         setInterval(() => {
             this.nextSlide();
-        }, 5000); // 5 секунд
+        }, 5000);
     }
 }
 
@@ -295,13 +310,13 @@ function enableSwipeSliderByItemWidth(trackSelector, itemSelector) {
 document.addEventListener('DOMContentLoaded', () => {
     // Первый слайдер (обычное направление)
     new Slider('.section-2-slider', '.slider-track', '.section-2-slider .indicator', 'nextSlide', false);
-    
+
     // Второй слайдер (обратное направление)
     new Slider('.section-3-slider', '.slider-track-reverse', '.section-3-slider .indicator', 'prevSlide', true);
-    
+
     // Галерея удобств
     new AmenitiesGallery();
-    
+
     // Галерея проектов
     new ProjectsGallery();
 }); 
@@ -310,8 +325,10 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   if (isMobile) {
-    enableSwipeSlider('.section-2 .slider-track', 5, false, '.section-2 .indicator');
-    enableSwipeSlider('.section-3 .slider-track-reverse', 5, true, '.section-3 .indicator');
+    const section2Slides = document.querySelectorAll('.section-2 .slider-track .slide').length || 5;
+    const section3Slides = document.querySelectorAll('.section-3 .slider-track-reverse .slide').length || 5;
+    enableSwipeSlider('.section-2 .slider-track', section2Slides, false, '.section-2 .indicator');
+    enableSwipeSlider('.section-3 .slider-track-reverse', section3Slides, true, '.section-3 .indicator');
     enableSwipeSlider('.amenities-track', 4, false, '.amenities-indicators .indicator');
     // Секция 6: шаг по ширине карточки (item + gap), сохраняет превью и делает свайп "большим"
     enableSwipeSliderByItemWidth('.projects-track', '.project-item');
