@@ -132,7 +132,7 @@ class AmenitiesGallery {
 class ProjectsGallery {
     constructor() {
         this.currentIndex = 0;
-        this.totalItems = 25;
+        this.totalItems = 11;
         this.track = document.querySelector('.projects-track');
         this.prevButton = document.querySelector('.project-prev');
         this.nextButton = document.querySelector('.project-next');
@@ -165,7 +165,7 @@ class ProjectsGallery {
     }
     
     updateGallery() {
-        const translateX = -this.currentIndex * 20; // 20% на каждый элемент (5 элементов)
+        const translateX = -this.currentIndex * 50; // 20% на каждый элемент (5 элементов)
         this.track.style.transform = `translateX(${translateX}%)`;
     }
 }
