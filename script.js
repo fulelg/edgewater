@@ -132,7 +132,7 @@ class AmenitiesGallery {
 class ProjectsGallery {
     constructor() {
         this.currentIndex = 0;
-        this.totalItems = 5;
+        this.totalItems = 25;
         this.track = document.querySelector('.projects-track');
         this.prevButton = document.querySelector('.project-prev');
         this.nextButton = document.querySelector('.project-next');
