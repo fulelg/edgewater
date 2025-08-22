@@ -2,6 +2,7 @@ class Slider {
     constructor(sliderSelector, trackSelector, indicatorsSelector, buttonId, isReverse = false) {
         this.currentSlide = 0;
         this.isReverse = isReverse;
+        this.autoTimer = null;
 
         this.sliderTrack = document.querySelector(trackSelector);
         this.slides = this.sliderTrack ? this.sliderTrack.querySelectorAll('.slide') : [];
@@ -12,6 +13,9 @@ class Slider {
         this.nextButton = document.getElementById(buttonId);
 
         this.init();
+
+        // Дадим доступ к инстансу из трека, чтобы свайп мог сбрасывать таймер
+        if (this.sliderTrack) this.sliderTrack.__slider = this;
     }
 
     init() {
@@ -22,6 +26,7 @@ class Slider {
         if (this.nextButton) {
             this.nextButton.addEventListener('click', () => {
                 this.nextSlide();
+                this.resetAutoPlay();
             });
         }
 
@@ -29,6 +34,7 @@ class Slider {
         this.indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 this.goToSlide(index);
+                this.resetAutoPlay();
             });
         });
 
@@ -82,9 +88,16 @@ class Slider {
     }
 
     autoPlay() {
-        setInterval(() => {
+        // Перед запуском убедимся, что предыдущий таймер очищен
+        if (this.autoTimer) clearInterval(this.autoTimer);
+        this.autoTimer = setInterval(() => {
             this.nextSlide();
         }, 5000);
+    }
+
+    resetAutoPlay() {
+        if (this.autoTimer) clearInterval(this.autoTimer);
+        this.autoPlay();
     }
 }
 
@@ -197,6 +210,8 @@ function enableSwipeSlider(trackSelector, slidesCount, isReverse = false, indica
     isTouch = true;
     startX = (e.touches ? e.touches[0].clientX : e.clientX);
     track.style.transition = 'none';
+    // Сбросить таймер автопрокрутки, если он есть
+    track.__slider?.resetAutoPlay?.();
   }
   function onMove(e) {
     if (!isTouch) return;
@@ -219,6 +234,8 @@ function enableSwipeSlider(trackSelector, slidesCount, isReverse = false, indica
       else current = Math.max(current - 1, 0);
     }
     update();
+    // После ручной смены — перезапустить автоплей, если он есть
+    track.__slider?.resetAutoPlay?.();
   }
 
   container.addEventListener('touchstart', onStart, { passive: true });
