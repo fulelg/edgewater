@@ -401,6 +401,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const GH_RAW_BASE = 'https://github.com/fulelg/edgewater/raw/main/';
   const MOBILE_SRC = IS_GITHUB_PAGES ? `${GH_RAW_BASE}${LOCAL_MOBILE}` : LOCAL_MOBILE;
   const DESKTOP_SRC = IS_GITHUB_PAGES ? `${GH_RAW_BASE}${LOCAL_DESKTOP}` : LOCAL_DESKTOP;
+  const LOCAL_DESKTOP_POSTER = 'img/Copy of A_Pti4ka_1 1.png';
+  const LOCAL_MOBILE_POSTER = 'img/image copy.png';
 
   function setHeaderVideoByViewport() {
     const video = document.querySelector('.header-video');
@@ -410,6 +412,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if (IS_GITHUB_PAGES) video.setAttribute('crossorigin', 'anonymous');
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const target = isMobile ? MOBILE_SRC : DESKTOP_SRC;
+    const poster = isMobile ? LOCAL_MOBILE_POSTER : LOCAL_DESKTOP_POSTER;
+    if (video.getAttribute('poster') !== poster) {
+      video.setAttribute('poster', poster);
+    }
     if (source.getAttribute('src') === target) return;
     source.setAttribute('src', target);
     video.load();
