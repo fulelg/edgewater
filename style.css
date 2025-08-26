@@ -1379,6 +1379,7 @@ body {
     /* Section 1 mobile */
     .section-1 {
         padding: 40px 20px 0 20px;
+        margin-bottom: 18px;
     }
 
     .section-1-content {
@@ -1461,7 +1462,7 @@ body {
     /* Section 2 */
     .section-2 {
         height: auto;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .section-2-content {
@@ -1530,7 +1531,7 @@ body {
     /* Section 3 */
     .section-3 {
         height: auto;
-        margin-bottom: 36px;
+        margin-bottom: 24px;
     }
 
     .section-3-content {
@@ -1661,7 +1662,7 @@ body {
     .section-4 {
         padding-left: 20px;
         padding-right: 20px;
-        margin-bottom: 40px;
+        margin-bottom: 24px;
         overflow: hidden;
     }
 
@@ -1726,7 +1727,7 @@ body {
     /* Section 7 (Location) */
     .section-7 {
         padding: 20px;
-        margin-bottom: 40px;
+        margin-bottom: 24px;
     }
 
     .section-7-title {
@@ -1825,7 +1826,7 @@ body {
 
     /* Section 5 (Coming soon) */
     .section-5 {
-        margin-bottom: 60px;
+        margin-bottom: 32px;
     }
 
     .section-5-title {
@@ -1846,6 +1847,7 @@ body {
     /* Section 6 (Completed projects) — макет уточнение */
     .section-6 {
         padding-left: 20px;
+        margin-bottom: 32px;
     }
 
     .section-6-title {

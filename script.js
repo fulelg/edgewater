@@ -391,3 +391,28 @@ window.addEventListener('DOMContentLoaded', () => {
     a.remove();
   });
 }); 
+
+// Header video: use a lighter/mobile teaser video on small screens
+(function() {
+  const MOBILE_SRC = 'vid/EdgeWater Residence_Teaser_2V.mp4';
+  const DESKTOP_SRC = 'vid/Edgewater_event_video.mp4';
+
+  function setHeaderVideoByViewport() {
+    const video = document.querySelector('.header-video');
+    if (!video) return;
+    const source = video.querySelector('source');
+    if (!source) return;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const target = isMobile ? MOBILE_SRC : DESKTOP_SRC;
+    if (source.getAttribute('src') === target) return;
+    source.setAttribute('src', target);
+    video.load();
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.then === 'function') {
+      playPromise.catch(() => {});
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', setHeaderVideoByViewport);
+  window.addEventListener('resize', setHeaderVideoByViewport);
+})();
