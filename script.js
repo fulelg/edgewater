@@ -394,8 +394,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Header video: use a lighter/mobile teaser video on small screens
 (function() {
-  const MOBILE_SRC = 'vid/EdgeWater Residence_Teaser_2V.mp4';
-  const DESKTOP_SRC = 'vid/Edgewater_event_video.mp4';
+  const MOBILE_SRC = 'vid/EdgeWater_Residence_Teaser_2V_h264.mp4';
+  const DESKTOP_SRC = 'vid/Edgewater_event_video_h264.mp4';
 
   function setHeaderVideoByViewport() {
     const video = document.querySelector('.header-video');
