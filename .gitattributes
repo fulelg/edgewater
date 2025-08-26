@@ -1,1 +1,5 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+vid/Edgewater_event_video_small.mp4 -filter -diff -merge -text
+vid/EdgeWater_Residence_Teaser_2V_small.mp4 -filter -diff -merge -text
+vid/Edgewater_event_video_small.mp4 !text !filter !merge !diff
+vid/EdgeWater_Residence_Teaser_2V_small.mp4 !text !filter !merge !diff
