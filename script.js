@@ -200,7 +200,7 @@ function enableSwipeSlider(trackSelector, slidesCount, isReverse = false, indica
   }
 
   function update() {
-    const step = 100 / slidesCount; // ширина одного слайда в процентах
+    const step = 95 / slidesCount; // ширина одного слайда в процентах
     const percent = -current * step;
     track.style.transition = 'transform 0.35s ease';
     track.style.transform = `translateX(${percent}%)`;
@@ -268,7 +268,7 @@ function enableSwipeSliderByItemWidth(trackSelector, itemSelector) {
         const gap = getGap();
         const itemWidth = items[0].getBoundingClientRect().width;
         const stepPx = itemWidth + gap;
-        const maxIndex = Math.max(0, Math.floor((track.scrollWidth - container.clientWidth + 1) / stepPx));
+        const maxIndex = Math.max(0, Math.floor((track.scrollWidth - container.clientWidth + 1) / stepPx)) + 1;
         return { stepPx, maxIndex };
     }
 
@@ -419,7 +419,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const messengerText = document.querySelectorAll('.messenger-text');
     messengerText[0].textContent = !isMobile ? 'WhatsApp' : '';
     messengerText[1].textContent = !isMobile ? 'Instagram' : '';
-    
+
     if (video.getAttribute('poster') !== poster) {
       video.setAttribute('poster', poster);
     }
