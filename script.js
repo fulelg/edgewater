@@ -394,14 +394,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Header video: use a lighter/mobile teaser video on small screens
 (function() {
-  const MOBILE_SRC = 'vid/EdgeWater_Residence_Teaser_2V_h264.mp4';
-  const DESKTOP_SRC = 'vid/Edgewater_event_video_h264.mp4';
+  const LOCAL_MOBILE = 'vid/EdgeWater_Residence_Teaser_2V_h264.mp4';
+  const LOCAL_DESKTOP = 'vid/Edgewater_event_video_h264.mp4';
+  const IS_GITHUB_PAGES = /github\.io$/.test(location.hostname);
+  // Для публичных LFS/бинарников используем github.com/.../raw/... → редирект на media.githubusercontent.com
+  const GH_RAW_BASE = 'https://github.com/fulelg/edgewater/raw/main/';
+  const MOBILE_SRC = IS_GITHUB_PAGES ? `${GH_RAW_BASE}${LOCAL_MOBILE}` : LOCAL_MOBILE;
+  const DESKTOP_SRC = IS_GITHUB_PAGES ? `${GH_RAW_BASE}${LOCAL_DESKTOP}` : LOCAL_DESKTOP;
 
   function setHeaderVideoByViewport() {
     const video = document.querySelector('.header-video');
     if (!video) return;
     const source = video.querySelector('source');
     if (!source) return;
+    if (IS_GITHUB_PAGES) video.setAttribute('crossorigin', 'anonymous');
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const target = isMobile ? MOBILE_SRC : DESKTOP_SRC;
     if (source.getAttribute('src') === target) return;
