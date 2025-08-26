@@ -11,6 +11,7 @@ class Slider {
 
         this.indicators = document.querySelectorAll(indicatorsSelector);
         this.nextButton = document.getElementById(buttonId);
+        this.messengerText = document.querySelectorAll('.messenger-text');
 
         this.init();
 
@@ -145,7 +146,7 @@ class AmenitiesGallery {
 class ProjectsGallery {
     constructor() {
         this.currentIndex = 0;
-        this.totalItems = 11;
+        this.totalItems = 9;
         this.track = document.querySelector('.projects-track');
         this.prevButton = document.querySelector('.project-prev');
         this.nextButton = document.querySelector('.project-next');
@@ -415,6 +416,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const target = isMobile ? MOBILE_SRC : DESKTOP_SRC;
     const poster = isMobile ? LOCAL_MOBILE_POSTER : LOCAL_DESKTOP_POSTER;
+    const messengerText = document.querySelectorAll('.messenger-text');
+    messengerText[0].textContent = !isMobile ? 'WhatsApp' : '';
+    messengerText[1].textContent = !isMobile ? 'Instagram' : '';
+    
     if (video.getAttribute('poster') !== poster) {
       video.setAttribute('poster', poster);
     }
