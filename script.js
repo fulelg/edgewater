@@ -394,13 +394,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Header video: use a lighter/mobile teaser video on small screens
 (function() {
-  const LOCAL_MOBILE = 'vid/EdgeWater_Residence_Teaser_2V_h264.mp4';
-  const LOCAL_DESKTOP = 'vid/Edgewater_event_video_h264.mp4';
+  const LOCAL_MOBILE = 'vid/EdgeWater_Residence_Teaser_2V_small.mp4';
+  const LOCAL_DESKTOP = 'vid/Edgewater_event_video_small.mp4';
   const IS_GITHUB_PAGES = /github\.io$/.test(location.hostname);
-  // Для публичных LFS/бинарников используем github.com/.../raw/... → редирект на media.githubusercontent.com
-  const GH_RAW_BASE = 'https://github.com/fulelg/edgewater/raw/main/';
-  const MOBILE_SRC = IS_GITHUB_PAGES ? `${GH_RAW_BASE}${LOCAL_MOBILE}` : LOCAL_MOBILE;
-  const DESKTOP_SRC = IS_GITHUB_PAGES ? `${GH_RAW_BASE}${LOCAL_DESKTOP}` : LOCAL_DESKTOP;
+  const MOBILE_SRC = LOCAL_MOBILE;
+  const DESKTOP_SRC = LOCAL_DESKTOP;
   const LOCAL_DESKTOP_POSTER = 'img/Copy of A_Pti4ka_1 1.png';
   const LOCAL_MOBILE_POSTER = 'img/image copy.png';
 
@@ -409,7 +407,11 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!video) return;
     const source = video.querySelector('source');
     if (!source) return;
-    if (IS_GITHUB_PAGES) video.setAttribute('crossorigin', 'anonymous');
+    // Гарантируем параметры для iOS автоплея
+    video.muted = true;
+    video.setAttribute('muted', 'muted');
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const target = isMobile ? MOBILE_SRC : DESKTOP_SRC;
     const poster = isMobile ? LOCAL_MOBILE_POSTER : LOCAL_DESKTOP_POSTER;
@@ -423,6 +425,14 @@ window.addEventListener('DOMContentLoaded', () => {
     if (playPromise && typeof playPromise.then === 'function') {
       playPromise.catch(() => {});
     }
+    // iOS Chrome/Safari: запустить при первом взаимодействии
+    const onFirstTouch = () => {
+      video.play().catch(() => {});
+      window.removeEventListener('touchstart', onFirstTouch);
+      window.removeEventListener('click', onFirstTouch);
+    };
+    window.addEventListener('touchstart', onFirstTouch, { once: true, passive: true });
+    window.addEventListener('click', onFirstTouch, { once: true });
   }
 
   window.addEventListener('DOMContentLoaded', setHeaderVideoByViewport);
