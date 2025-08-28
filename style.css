@@ -1843,828 +1843,832 @@ body {
         letter-spacing: 0;
     }
 
-    .location-button {
+    /* .location-button {
         display: none;
-    }
-
-    /* Section 5 (Coming soon) */
-    .section-5 {
-        margin-bottom: 32px;
-    }
-
-    .section-5-title {
-        font-size: 20px;
-        font-weight: 500;
-        margin-bottom: 18px;
-    }
-
-    .section-5-image img {
-        height: 280px;
-        object-fit: cover;
-    }
-}
-
-/* Section 6 mobile title */
-@media (max-width: 768px) {
-
-    /* Section 6 (Completed projects) — макет уточнение */
-    .section-6 {
-        padding-left: 20px;
-        margin-bottom: 32px;
-    }
-
-    .section-6-title {
-        font-size: 20px;
-        font-weight: 500;
-        text-align: center;
-        margin-bottom: 22px;
-    }
-
-    .section-6-header {
-        margin-bottom: 0;
-    }
-
-    /* один слайд + небольшой превью следующего */
-    .projects-slider {
-        overflow: hidden;
-        padding-right: 0;
-    }
-
-    .projects-track {
-        display: flex;
-        gap: 16px;
-        width: auto;
-        transition: transform .35s ease;
-    }
-
-    .project-item {
-        flex: 0 0 calc(100% - 48px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-image {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        margin-bottom: 12px;
-    }
-
-    /* подписи под проектом */
-    .project-title {
-        font-family: 'Manrope', sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 119%;
-        text-transform: uppercase;
-        margin: 0 0 6px 0;
-        text-align: center;
-    }
-
-    .project-location {
-        font-family: 'Manrope', sans-serif;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 119%;
-        letter-spacing: 0;
-        color: #666;
-        text-transform: uppercase;
-        margin: 0 0 12px 0;
-        text-align: center;
-    }
-
-    .projects-navigation,
-    .projects-indicators {
-        display: none !important;
-    }
-
-    /* кнопка */
-    .projects-button {
-        justify-content: center;
-        width: 100%;
-        margin-top: 8px;
-    }
-
-    .visit-website-btn {
-        transform: none;
-        margin: 0;
-    }
-
-    .projects-button.mobile {
-        display: flex;
-        padding: 8px 30px;
-        font-size: 12px;
-    }
-
-    .projects-button.mobile .visit-website-btn {
-        padding: 8px 30px;
-        font-size: 12px;
-    }
-}
-
-/* Footer mobile layout */
-@media (max-width: 768px) {
-    .footer {
-        padding: 20px;
-        display: flex;
-    }
-
-    .footer-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "contacts navigation"
-            "messengers navigation";
-        gap: 16px 24px;
-        align-items: start;
-        width: fit-content;
-    }
-
-    .footer-section {
-        max-width: none;
-    }
-
-    .footer-section.contacts {
-        grid-area: contacts;
-    }
-
-    .footer-section.messengers {
-        grid-area: messengers;
-    }
-
-    .footer-section.navigation {
-        grid-area: navigation;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .footer-section.navigation .footer-logo {
-        order: -1;
-    }
-
-    .footer-title-contacts {
-        font-size: 20px;
-        margin-bottom: 14px;
-        margin-right: auto;
-    }
-
-    .footer-title {
-        font-size: 14px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .contact-label {
-        font-size: 12px;
-        margin-bottom: 6px;
-    }
-
-    .contact-details,
-    .contact-phone,
-    .contact-email {
-        font-size: 12px;
-    }
-
-    .footer-nav {
-        margin-bottom: 0;
-    }
-
-    .footer-nav-link {
-        font-size: 12px;
-    }
-
-    .logo-icon {
-        width: 56px;
-        height: auto;
-    }
-
-    .messenger-buttons {
-        gap: 10px;
-    }
-
-    .messenger-btn {
-        padding: 8px 14px;
-        font-size: 12px;
-    }
-
-    .messenger-icon {
-        width: 14px;
-        height: 14px;
-    }
-
-    .messenger-text {
-        font-size: 14px;
-    }
-
-    .footer-logo .logo-icon {
-        display: none;
-    }
-
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .footer-title {
-        display: none;
-    }
-
-    .messenger-buttons {
-        display: flex;
-    }
-
-    .messenger-btn.whatsapp,
-    .messenger-btn.instagram {
-        border: none;
-        padding: 0;
-    }
-
-    .messenger-btn.whatsapp img,
-    .messenger-btn.instagram img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .messenger-btn.whatsapp:hover,
-    .messenger-btn.instagram:hover {
-        background-color: transparent;
-    }
-
-    .messenger-btn {
-        width: 100%;
-    }
-
-    .footer-section.navigation {
-        display: none;
-    }
-
-    .footer-logo-mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 25%;
-    }
-}
-
-/* Ultra-wide and 4K enhancements */
-@media (min-width: 1920px) {
-    .menu {
-        padding: 80px 140px 0 140px;
-        gap: 64px;
-    }
-
-    .menu-item {
-        font-size: 18px;
-    }
-
-    .contact-us {
-        padding: 12px 22px;
-        font-size: 18px;
-    }
-
-    .header-title {
-        font-size: 80px;
-    }
-
-    .header-subtitle {
-        font-size: 48px;
-    }
-
-    .section-1 {
-        padding: 180px 180px 0 180px;
-    }
-
-    .section-1-brochure-title {
-        font-size: 56px;
-        max-width: 640px;
-    }
-
-    .section-1-brochure-subtitle {
-        font-size: 18px;
-        max-width: 560px;
-    }
-
-    .section-1-brochure-button {
-        padding: 16px 40px;
-        font-size: 18px;
-    }
-
-    .section-1-media-img {
-        height: 420px;
-    }
-
-    .section-1-info-panel {
-        padding: 56px 80px;
-    }
-
-    .info-label {
-        font-size: 18px;
-    }
-
-    .info-main {
-        font-size: 40px;
-    }
-
-    .info-sub {
-        font-size: 20px;
-    }
-
-    .info-divider {
-        height: 110px;
-        margin: 0 56px;
-        margin-top: 40px;
-    }
-
-    .section-2,
-    .section-3 {
-        height: 980px;
-    }
-
-    .section-2-content,
-    .section-3-content {
-        padding: 0 180px 0 120px;
-    }
-
-    .text-main {
-        font-size: 48px;
-    }
-
-    .text-sub {
-        font-size: 42px;
-    }
-
-    .section-2-slider,
-    .section-3-slider {
-        height: 980px;
-    }
-
-    .slider-container {
-        height: 100%;
-    }
-
-    .slider-track,
-    .slider-track-reverse {
-        height: 100%;
-    }
-
-    .slide {
-        height: 100%;
-    }
-
-    .slider-indicators {
-        bottom: 56px;
-    }
-
-    .indicator {
-        width: 120px;
-        height: 4px;
-    }
-
-    .slider-nav-arrow,
-    .slider-nav-arrow-reverse {
-        width: 56px;
-        height: 56px;
-    }
-
-    .slider-nav-arrow {
-        right: 160px;
-    }
-
-    .slider-nav-arrow-reverse {
-        left: 120px;
-    }
-
-    .section-4 {
-        padding-left: 140px;
-        margin-bottom: 120px;
-    }
-
-    .section-4-title {
-        font-size: 48px;
-    }
-
-    .amenity-image {
-        width: 580px;
-        height: 760px;
-    }
-
-    .amenity-title {
-        font-size: 26px;
-    }
-
-    .section-7 {
-        padding: 80px 260px 60px 260px;
-    }
-
-    .section-7-subtitle {
-        font-size: 42px;
-    }
-
-    .section-7-title {
-        font-size: 48px;
-    }
-
-    .section-7-description p {
-        font-size: 24px;
-        padding: 0 160px;
-    }
-
-    .section-7-distances {
-        padding: 0 160px;
-    }
-
-    .distance-time {
-        font-size: 32px;
-    }
-
-    .distance-name {
-        font-size: 24px;
-    }
-
-    .section-5-title {
-        font-size: 48px;
-    }
-
-    .section-5-image img {
-        height: 760px;
-    }
-
-    .section-6 {
-        padding-left: 140px;
-        margin-bottom: 140px;
-    }
-
-    .section-6-title {
-        font-size: 48px;
-    }
-
-    .location-icon {
-        height: 100px;
-        width: 90px;
-    }
-
-    .location-time {
-        font-size: 24px;
-    }
-
-    .location-name {
-        font-size: 20px;
-    }
-
-    .location-map img {
-        height: 520px;
-        width: 100%;
-        max-width: 100%;
-    }
+    } */
 
     .google-maps-btn {
-        padding: 16px 40px;
-        font-size: 18px;
+        font-size: 12px;
+        padding: 8px 14px;
+
+        /* Section 5 (Coming soon) */
+        .section-5 {
+            margin-bottom: 32px;
+        }
+
+        .section-5-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .section-5-image img {
+            height: 280px;
+            object-fit: cover;
+        }
+    }
+
+    /* Section 6 mobile title */
+    @media (max-width: 768px) {
+
+        /* Section 6 (Completed projects) — макет уточнение */
+        .section-6 {
+            padding-left: 20px;
+            margin-bottom: 32px;
+        }
+
+        .section-6-title {
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .section-6-header {
+            margin-bottom: 0;
+        }
+
+        /* один слайд + небольшой превью следующего */
+        .projects-slider {
+            overflow: hidden;
+            padding-right: 0;
+        }
+
+        .projects-track {
+            display: flex;
+            gap: 16px;
+            width: auto;
+            transition: transform .35s ease;
+        }
+
+        .project-item {
+            flex: 0 0 calc(100% - 48px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        /* подписи под проектом */
+        .project-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 119%;
+            text-transform: uppercase;
+            margin: 0 0 6px 0;
+            text-align: center;
+        }
+
+        .project-location {
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 119%;
+            letter-spacing: 0;
+            color: #666;
+            text-transform: uppercase;
+            margin: 0 0 12px 0;
+            text-align: center;
+        }
+
+        .projects-navigation,
+        .projects-indicators {
+            display: none !important;
+        }
+
+        /* кнопка */
+        .projects-button {
+            justify-content: center;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .visit-website-btn {
+            transform: none;
+            margin: 0;
+        }
+
+        .projects-button.mobile {
+            display: flex;
+            padding: 8px 30px;
+            font-size: 12px;
+        }
+
+        .projects-button.mobile .visit-website-btn {
+            padding: 8px 30px;
+            font-size: 12px;
+        }
+    }
+
+    /* Footer mobile layout */
+    @media (max-width: 768px) {
+        .footer {
+            padding: 20px;
+            display: flex;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "contacts navigation"
+                "messengers navigation";
+            gap: 16px 24px;
+            align-items: start;
+            width: fit-content;
+        }
+
+        .footer-section {
+            max-width: none;
+        }
+
+        .footer-section.contacts {
+            grid-area: contacts;
+        }
+
+        .footer-section.messengers {
+            grid-area: messengers;
+        }
+
+        .footer-section.navigation {
+            grid-area: navigation;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .footer-section.navigation .footer-logo {
+            order: -1;
+        }
+
+        .footer-title-contacts {
+            font-size: 20px;
+            margin-bottom: 14px;
+            margin-right: auto;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .contact-details,
+        .contact-phone,
+        .contact-email {
+            font-size: 12px;
+        }
+
+        .footer-nav {
+            margin-bottom: 0;
+        }
+
+        .footer-nav-link {
+            font-size: 12px;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: auto;
+        }
+
+        .messenger-buttons {
+            gap: 10px;
+        }
+
+        .messenger-btn {
+            padding: 8px 14px;
+            font-size: 12px;
+        }
+
+        .messenger-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .messenger-text {
+            font-size: 14px;
+        }
+
+        .footer-logo .logo-icon {
+            display: none;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            display: none;
+        }
+
+        .messenger-buttons {
+            display: flex;
+        }
+
+        .messenger-btn.whatsapp,
+        .messenger-btn.instagram {
+            border: none;
+            padding: 0;
+        }
+
+        .messenger-btn.whatsapp img,
+        .messenger-btn.instagram img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .messenger-btn.whatsapp:hover,
+        .messenger-btn.instagram:hover {
+            background-color: transparent;
+        }
+
+        .messenger-btn {
+            width: 100%;
+        }
+
+        .footer-section.navigation {
+            display: none;
+        }
+
+        .footer-logo-mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25%;
+        }
+    }
+
+    /* Ultra-wide and 4K enhancements */
+    @media (min-width: 1920px) {
+        .menu {
+            padding: 80px 140px 0 140px;
+            gap: 64px;
+        }
+
+        .menu-item {
+            font-size: 18px;
+        }
+
+        .contact-us {
+            padding: 12px 22px;
+            font-size: 18px;
+        }
+
+        .header-title {
+            font-size: 80px;
+        }
+
+        .header-subtitle {
+            font-size: 48px;
+        }
+
+        .section-1 {
+            padding: 180px 180px 0 180px;
+        }
+
+        .section-1-brochure-title {
+            font-size: 56px;
+            max-width: 640px;
+        }
+
+        .section-1-brochure-subtitle {
+            font-size: 18px;
+            max-width: 560px;
+        }
+
+        .section-1-brochure-button {
+            padding: 16px 40px;
+            font-size: 18px;
+        }
+
+        .section-1-media-img {
+            height: 420px;
+        }
+
+        .section-1-info-panel {
+            padding: 56px 80px;
+        }
+
+        .info-label {
+            font-size: 18px;
+        }
+
+        .info-main {
+            font-size: 40px;
+        }
+
+        .info-sub {
+            font-size: 20px;
+        }
+
+        .info-divider {
+            height: 110px;
+            margin: 0 56px;
+            margin-top: 40px;
+        }
+
+        .section-2,
+        .section-3 {
+            height: 980px;
+        }
+
+        .section-2-content,
+        .section-3-content {
+            padding: 0 180px 0 120px;
+        }
+
+        .text-main {
+            font-size: 48px;
+        }
+
+        .text-sub {
+            font-size: 42px;
+        }
+
+        .section-2-slider,
+        .section-3-slider {
+            height: 980px;
+        }
+
+        .slider-container {
+            height: 100%;
+        }
+
+        .slider-track,
+        .slider-track-reverse {
+            height: 100%;
+        }
+
+        .slide {
+            height: 100%;
+        }
+
+        .slider-indicators {
+            bottom: 56px;
+        }
+
+        .indicator {
+            width: 120px;
+            height: 4px;
+        }
+
+        .slider-nav-arrow,
+        .slider-nav-arrow-reverse {
+            width: 56px;
+            height: 56px;
+        }
+
+        .slider-nav-arrow {
+            right: 160px;
+        }
+
+        .slider-nav-arrow-reverse {
+            left: 120px;
+        }
+
+        .section-4 {
+            padding-left: 140px;
+            margin-bottom: 120px;
+        }
+
+        .section-4-title {
+            font-size: 48px;
+        }
+
+        .amenity-image {
+            width: 580px;
+            height: 760px;
+        }
+
+        .amenity-title {
+            font-size: 26px;
+        }
+
+        .section-7 {
+            padding: 80px 260px 60px 260px;
+        }
+
+        .section-7-subtitle {
+            font-size: 42px;
+        }
+
+        .section-7-title {
+            font-size: 48px;
+        }
+
+        .section-7-description p {
+            font-size: 24px;
+            padding: 0 160px;
+        }
+
+        .section-7-distances {
+            padding: 0 160px;
+        }
+
+        .distance-time {
+            font-size: 32px;
+        }
+
+        .distance-name {
+            font-size: 24px;
+        }
+
+        .section-5-title {
+            font-size: 48px;
+        }
+
+        .section-5-image img {
+            height: 760px;
+        }
+
+        .section-6 {
+            padding-left: 140px;
+            margin-bottom: 140px;
+        }
+
+        .section-6-title {
+            font-size: 48px;
+        }
+
+        .location-icon {
+            height: 100px;
+            width: 90px;
+        }
+
+        .location-time {
+            font-size: 24px;
+        }
+
+        .location-name {
+            font-size: 20px;
+        }
+
+        .location-map img {
+            height: 520px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .google-maps-btn {
+            padding: 16px 40px;
+            font-size: 18px;
+        }
+
+        .project-image {
+            width: 560px;
+            height: 520px;
+        }
+
+        .project-title {
+            font-size: 48px;
+        }
+
+        .project-location {
+            font-size: 18px;
+        }
+
+        .projects-navigation {
+            margin-top: 80px;
+        }
+
+        .project-nav-arrow {
+            width: 36px;
+        }
+
+        .visit-website-btn {
+            padding: 10px 56px;
+            font-size: 18px;
+        }
+
+        .footer-image {
+            height: 760px;
+        }
+
+        .footer {
+            padding: 64px 200px 90px 140px;
+        }
+
+        .footer-title-contacts {
+            font-size: 48px;
+        }
+
+        .contact-label {
+            font-size: 22px;
+        }
+
+        .contact-details,
+        .contact-phone,
+        .contact-email {
+            font-size: 16px;
+        }
+
+        .messenger-btn {
+            padding: 12px 30px;
+            font-size: 16px;
+        }
+
+        .messenger-text {
+            font-size: 22px;
+        }
+
+        .footer-nav-link {
+            font-size: 16px;
+        }
+
+        .footer-logo .logo-icon {
+            width: 240px;
+            height: auto;
+        }
+    }
+
+    @media (min-width: 3840px) {
+        html {
+            font-size: 20px;
+        }
+
+        .menu {
+            padding: 120px 220px 0 220px;
+            gap: 80px;
+        }
+
+        .menu-item {
+            font-size: 22px;
+        }
+
+        .contact-us {
+            padding: 16px 28px;
+            font-size: 22px;
+        }
+
+        .header {
+            height: 100vh;
+        }
+
+        .header-title {
+            font-size: 120px;
+        }
+
+        .header-subtitle {
+            font-size: 64px;
+        }
+
+        .section-1 {
+            padding: 220px 260px 0 260px;
+            margin-bottom: 160px;
+        }
+
+        .section-1-media-img {
+            height: 560px;
+        }
+
+        .section-1-brochure-title {
+            font-size: 72px;
+            max-width: 840px;
+        }
+
+        .section-1-brochure-subtitle {
+            font-size: 22px;
+            max-width: 760px;
+        }
+
+        .section-1-brochure-button {
+            padding: 20px 56px;
+            font-size: 22px;
+        }
+
+        .section-1-info-panel {
+            padding: 80px 120px;
+        }
+
+        .info-label {
+            font-size: 22px;
+        }
+
+        .info-main {
+            font-size: 56px;
+        }
+
+        .info-sub {
+            font-size: 28px;
+        }
+
+        .info-divider {
+            height: 140px;
+            margin: 0 80px;
+            margin-top: 40px;
+        }
+
+        .section-2,
+        .section-3 {
+            height: 980px;
+        }
+
+        .section-2-content,
+        .section-3-content {
+            padding: 0 260px 0 180px;
+        }
+
+        .text-main {
+            font-size: 64px;
+        }
+
+        .text-sub {
+            font-size: 56px;
+        }
+
+        .section-2-slider,
+        .section-3-slider {
+            height: 980px;
+        }
+
+        .slider-indicators {
+            bottom: 72px;
+        }
+
+        .indicator {
+            width: 160px;
+            height: 6px;
+        }
+
+        .slider-nav-arrow,
+        .slider-nav-arrow-reverse {
+            width: 64px;
+            height: 64px;
+        }
+
+        .slider-nav-arrow {
+            right: 220px;
+        }
+
+        .slider-nav-arrow-reverse {
+            left: 180px;
+        }
+
+        .section-4 {
+            padding-left: 220px;
+            margin-bottom: 180px;
+        }
+
+        .section-4-title {
+            font-size: 64px;
+        }
+
+        .amenity-image {
+            width: 500px;
+            height: 640px;
+        }
+
+        .amenity-title {
+            font-size: 32px;
+        }
+
+        .section-7 {
+            padding: 120px 320px 80px 320px;
+        }
+
+        .section-7-subtitle {
+            font-size: 56px;
+        }
+
+        .section-7-title {
+            font-size: 120px;
+        }
+
+        .section-7-description p {
+            font-size: 26px;
+            padding: 0 220px;
+        }
+
+        .section-7-distances {
+            padding: 0 220px;
+        }
+
+        .distance-time {
+            font-size: 40px;
+        }
+
+        .distance-name {
+            font-size: 28px;
+        }
+
+        .location-content {
+            grid-template-columns: 480px 1fr;
+            gap: 56px;
+        }
+
+        .location-icon {
+            width: 100px;
+            height: 86px;
+        }
+
+        .location-time {
+            font-size: 40px;
+        }
+
+        .location-name {
+            font-size: 24px;
+        }
+
+        .location-map img {
+            max-width: 980px;
+            height: 520px;
+        }
+
+        .section-5-title {
+            font-size: 64px;
+        }
+
+        .section-5-image img {
+            height: 980px;
+        }
+
+        .section-6 {
+            padding-left: 220px;
+            margin-bottom: 200px;
+        }
+
+        .section-6-title {
+            font-size: 64px;
+        }
+
+        .project-image {
+            width: 720px;
+            height: 660px;
+        }
+
+        .project-title {
+            font-size: 64px;
+        }
+
+        .project-location {
+            font-size: 22px;
+        }
+
+        .projects-navigation {
+            margin-top: 100px;
+        }
+
+        .project-nav-arrow {
+            width: 44px;
+        }
+
+        .visit-website-btn {
+            padding: 14px 72px;
+            font-size: 22px;
+        }
+
+        .footer-image {
+            height: 980px;
+        }
+
+        .footer {
+            padding: 80px 300px 120px 220px;
+        }
+
+        .footer-title-contacts {
+            font-size: 64px;
+        }
+
+        .contact-label {
+            font-size: 26px;
+        }
+
+        .contact-details,
+        .contact-phone,
+        .contact-email {
+            font-size: 18px;
+        }
+
+        .messenger-btn {
+            padding: 16px 36px;
+            font-size: 18px;
+        }
+
+        .messenger-text {
+            font-size: 26px;
+        }
+
+        .footer-nav-link {
+            font-size: 18px;
+        }
+
+        .footer-logo .logo-icon {
+            width: 300px;
+            height: auto;
+        }
     }
-
-    .project-image {
-        width: 560px;
-        height: 520px;
-    }
-
-    .project-title {
-        font-size: 48px;
-    }
-
-    .project-location {
-        font-size: 18px;
-    }
-
-    .projects-navigation {
-        margin-top: 80px;
-    }
-
-    .project-nav-arrow {
-        width: 36px;
-    }
-
-    .visit-website-btn {
-        padding: 10px 56px;
-        font-size: 18px;
-    }
-
-    .footer-image {
-        height: 760px;
-    }
-
-    .footer {
-        padding: 64px 200px 90px 140px;
-    }
-
-    .footer-title-contacts {
-        font-size: 48px;
-    }
-
-    .contact-label {
-        font-size: 22px;
-    }
-
-    .contact-details,
-    .contact-phone,
-    .contact-email {
-        font-size: 16px;
-    }
-
-    .messenger-btn {
-        padding: 12px 30px;
-        font-size: 16px;
-    }
-
-    .messenger-text {
-        font-size: 22px;
-    }
-
-    .footer-nav-link {
-        font-size: 16px;
-    }
-
-    .footer-logo .logo-icon {
-        width: 240px;
-        height: auto;
-    }
-}
-
-@media (min-width: 3840px) {
-    html {
-        font-size: 20px;
-    }
-
-    .menu {
-        padding: 120px 220px 0 220px;
-        gap: 80px;
-    }
-
-    .menu-item {
-        font-size: 22px;
-    }
-
-    .contact-us {
-        padding: 16px 28px;
-        font-size: 22px;
-    }
-
-    .header {
-        height: 100vh;
-    }
-
-    .header-title {
-        font-size: 120px;
-    }
-
-    .header-subtitle {
-        font-size: 64px;
-    }
-
-    .section-1 {
-        padding: 220px 260px 0 260px;
-        margin-bottom: 160px;
-    }
-
-    .section-1-media-img {
-        height: 560px;
-    }
-
-    .section-1-brochure-title {
-        font-size: 72px;
-        max-width: 840px;
-    }
-
-    .section-1-brochure-subtitle {
-        font-size: 22px;
-        max-width: 760px;
-    }
-
-    .section-1-brochure-button {
-        padding: 20px 56px;
-        font-size: 22px;
-    }
-
-    .section-1-info-panel {
-        padding: 80px 120px;
-    }
-
-    .info-label {
-        font-size: 22px;
-    }
-
-    .info-main {
-        font-size: 56px;
-    }
-
-    .info-sub {
-        font-size: 28px;
-    }
-
-    .info-divider {
-        height: 140px;
-        margin: 0 80px;
-        margin-top: 40px;
-    }
-
-    .section-2,
-    .section-3 {
-        height: 980px;
-    }
-
-    .section-2-content,
-    .section-3-content {
-        padding: 0 260px 0 180px;
-    }
-
-    .text-main {
-        font-size: 64px;
-    }
-
-    .text-sub {
-        font-size: 56px;
-    }
-
-    .section-2-slider,
-    .section-3-slider {
-        height: 980px;
-    }
-
-    .slider-indicators {
-        bottom: 72px;
-    }
-
-    .indicator {
-        width: 160px;
-        height: 6px;
-    }
-
-    .slider-nav-arrow,
-    .slider-nav-arrow-reverse {
-        width: 64px;
-        height: 64px;
-    }
-
-    .slider-nav-arrow {
-        right: 220px;
-    }
-
-    .slider-nav-arrow-reverse {
-        left: 180px;
-    }
-
-    .section-4 {
-        padding-left: 220px;
-        margin-bottom: 180px;
-    }
-
-    .section-4-title {
-        font-size: 64px;
-    }
-
-    .amenity-image {
-        width: 500px;
-        height: 640px;
-    }
-
-    .amenity-title {
-        font-size: 32px;
-    }
-
-    .section-7 {
-        padding: 120px 320px 80px 320px;
-    }
-
-    .section-7-subtitle {
-        font-size: 56px;
-    }
-
-    .section-7-title {
-        font-size: 120px;
-    }
-
-    .section-7-description p {
-        font-size: 26px;
-        padding: 0 220px;
-    }
-
-    .section-7-distances {
-        padding: 0 220px;
-    }
-
-    .distance-time {
-        font-size: 40px;
-    }
-
-    .distance-name {
-        font-size: 28px;
-    }
-
-    .location-content {
-        grid-template-columns: 480px 1fr;
-        gap: 56px;
-    }
-
-    .location-icon {
-        width: 100px;
-        height: 86px;
-    }
-
-    .location-time {
-        font-size: 40px;
-    }
-
-    .location-name {
-        font-size: 24px;
-    }
-
-    .location-map img {
-        max-width: 980px;
-        height: 520px;
-    }
-
-    .section-5-title {
-        font-size: 64px;
-    }
-
-    .section-5-image img {
-        height: 980px;
-    }
-
-    .section-6 {
-        padding-left: 220px;
-        margin-bottom: 200px;
-    }
-
-    .section-6-title {
-        font-size: 64px;
-    }
-
-    .project-image {
-        width: 720px;
-        height: 660px;
-    }
-
-    .project-title {
-        font-size: 64px;
-    }
-
-    .project-location {
-        font-size: 22px;
-    }
-
-    .projects-navigation {
-        margin-top: 100px;
-    }
-
-    .project-nav-arrow {
-        width: 44px;
-    }
-
-    .visit-website-btn {
-        padding: 14px 72px;
-        font-size: 22px;
-    }
-
-    .footer-image {
-        height: 980px;
-    }
-
-    .footer {
-        padding: 80px 300px 120px 220px;
-    }
-
-    .footer-title-contacts {
-        font-size: 64px;
-    }
-
-    .contact-label {
-        font-size: 26px;
-    }
-
-    .contact-details,
-    .contact-phone,
-    .contact-email {
-        font-size: 18px;
-    }
-
-    .messenger-btn {
-        padding: 16px 36px;
-        font-size: 18px;
-    }
-
-    .messenger-text {
-        font-size: 26px;
-    }
-
-    .footer-nav-link {
-        font-size: 18px;
-    }
-
-    .footer-logo .logo-icon {
-        width: 300px;
-        height: auto;
-    }
-}
