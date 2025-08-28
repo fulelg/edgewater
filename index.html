@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" as="image" href="img/Copy of A_Pti4ka_1 1.png">
+    <link rel="preload" as="image" href="img/image copy.png">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.svg" type="image/svg+xml">
     <link rel="alternate icon" href="img/logo.png" type="image/png">
@@ -26,7 +29,7 @@
                     <span></span>
                 </button>
                 <a class="menu-logo" href="https://sat-ns.kz/" target="_blank">
-                    <img src="img/logo.svg" alt="MGS Development logo">
+                    <img src="img/logo.svg" decoding="async" alt="MGS Development logo">
                 </a>
                 <a class="menu-item" href="#projects">projects</a>
                 <a class="menu-item" href="#amenities">Amenities</a>
@@ -45,7 +48,7 @@
             </nav>
 
             <div onclick="window.open('https://sat-ns.kz/', '_blank', 'noopener,noreferrer')" class="header-brand">
-                <img src="img/logo.svg" alt="MGS Development">
+                <img src="img/logo.svg" decoding="async" alt="MGS Development">
             </div>
             <!-- <div class="header-content">
                 <h1 class="header-title">Unlock Tranquil</h1>
@@ -63,8 +66,10 @@
                         <button class="section-1-brochure-button">Download Brochure</button>
                     </div>
                     <div class="section-1-media">
-                        <img src="img/first.png" alt="Edgewater photo 1" class="section-1-media-img">
-                        <img src="img/second.png" alt="Edgewater photo 2" class="section-1-media-img">
+                        <img src="img/first.png" loading="lazy" decoding="async" alt="Edgewater photo 1"
+                            class="section-1-media-img">
+                        <img src="img/second.png" loading="lazy" decoding="async" alt="Edgewater photo 2"
+                            class="section-1-media-img">
                     </div>
                     <div class="section-1-info-panel">
                         <div class="section-1-info-panel-inner">
@@ -104,35 +109,44 @@
                         <div class="slider-container">
                             <div class="slider-track">
                                 <div class="slide active">
-                                    <img src="img/image.png" alt="Edgewater Residences Exterior" class="slider-image">
+                                    <img src="img/image.png" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Exterior" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/2ext.jpg" alt="Edgewater Residences Interior" class="slider-image">
+                                    <img src="img/2ext.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Interior" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/3ext.jpg" alt="Edgewater Residences Amenities" class="slider-image">
+                                    <img src="img/3ext.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Amenities" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/4ext.jpg" alt="Edgewater Residences Location" class="slider-image">
+                                    <img src="img/4ext.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Location" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/5ext.jpg" alt="Edgewater Residences Views" class="slider-image">
+                                    <img src="img/5ext.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Views" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/ext/6.jpg" alt="Edgewater Residences Views" class="slider-image">
+                                    <img src="img/ext/6.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Views" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/ext/7.jpg" alt="Edgewater Residences Views" class="slider-image">
+                                    <img src="img/ext/7.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Views" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/ext/8.jpg" alt="Edgewater Residences Views" class="slider-image">
+                                    <img src="img/ext/8.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Views" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/ext/9.jpg" alt="Edgewater Residences Views" class="slider-image">
+                                    <img src="img/ext/9.jpg" loading="lazy" decoding="async"
+                                        alt="Edgewater Residences Views" class="slider-image">
                                 </div>
                             </div>
                             <button class="slider-nav-arrow" id="nextSlide">
-                                <img src="img/right-slider.svg" alt="arrow-right">
+                                <img src="img/right-slider.svg" loading="lazy" decoding="async" alt="arrow-right">
                             </button>
                         </div>
                         <div class="slider-indicators">
@@ -156,92 +170,92 @@
                         <div class="slider-container">
                             <div class="slider-track-reverse">
                                 <div class="slide">
-                                    <img src="img/interior/e_View010000+-denoise.jpg"
+                                    <img src="img/interior/e_View010000+-denoise.jpg" loading="lazy" decoding="async"
                                         alt="Interior ed3_View03_View200000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/e_View050000+-denoise.jpg" alt="Interior l_View020000"
-                                        class="slider-image">
+                                    <img src="img/interior/e_View050000+-denoise.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View020000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/e_View090000+-denoise.jpg" alt="Interior l_View040000"
-                                        class="slider-image">
+                                    <img src="img/interior/e_View090000+-denoise.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View040000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/e_View130000+-denoise.jpg" alt="Interior l_View050000"
-                                        class="slider-image">
+                                    <img src="img/interior/e_View130000+-denoise.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View050000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/e_View240000.jpg" alt="Interior l_View060000"
-                                        class="slider-image">
+                                    <img src="img/interior/e_View240000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View060000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/e_View280000+-denoise.jpg" alt="Interior l_View070000"
-                                        class="slider-image">
+                                    <img src="img/interior/e_View280000+-denoise.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View070000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/ed3_View010000.jpg" alt="Interior l_View090000"
-                                        class="slider-image">
+                                    <img src="img/interior/ed3_View010000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View090000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/ed3_View060000.jpg" alt="Interior l_View110000"
-                                        class="slider-image">
+                                    <img src="img/interior/ed3_View060000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View110000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/ed3_View110000.jpg" alt="Interior l_View130000"
-                                        class="slider-image">
+                                    <img src="img/interior/ed3_View110000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View130000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/ed3_View150000.jpg" alt="Interior l_View150000"
-                                        class="slider-image">
+                                    <img src="img/interior/ed3_View150000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View150000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/ed3_View160000.jpg" alt="Interior l_View160000"
-                                        class="slider-image">
+                                    <img src="img/interior/ed3_View160000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View160000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/ed3_View170000.jpg" alt="Interior l_View170000"
-                                        class="slider-image">
+                                    <img src="img/interior/ed3_View170000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View170000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View010000.jpg" alt="Interior l_View180000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View010000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View180000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View020000.jpg" alt="Interior l_View190000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View020000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View190000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View040000.jpg" alt="Interior l_View200000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View040000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View200000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View100000.jpg" alt="Interior l_View210000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View100000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View210000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View130000.jpg" alt="Interior l_View220000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View130000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View220000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View160000.jpg" alt="Interior l_View230000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View160000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View230000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View190000.jpg" alt="Interior l_View250000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View190000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View250000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View240000.jpg" alt="Interior l_View260000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View240000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View260000" class="slider-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="img/interior/l_View250000.jpg" alt="Interior l_View280000"
-                                        class="slider-image">
+                                    <img src="img/interior/l_View250000.jpg" loading="lazy" decoding="async"
+                                        alt="Interior l_View280000" class="slider-image">
                                 </div>
                             </div>
                             <button class="slider-nav-arrow-reverse" id="prevSlide">
-                                <img src="img/left-slider.svg" alt="arrow-left">
+                                <img src="img/left-slider.svg" loading="lazy" decoding="async" alt="arrow-left">
                             </button>
                         </div>
                         <div class="slider-indicators">
@@ -285,19 +299,23 @@
                         <div class="amenities-slider">
                             <div class="amenities-track">
                                 <div class="amenity-item">
-                                    <img src="img/pool.png" alt="Pool" class="amenity-image">
+                                    <img src="img/pool.png" loading="lazy" decoding="async" alt="Pool"
+                                        class="amenity-image">
                                     <h3 class="amenity-title">POOL</h3>
                                 </div>
                                 <div class="amenity-item">
-                                    <img src="img/gym.png" alt="Gym" class="amenity-image">
+                                    <img src="img/gym.png" loading="lazy" decoding="async" alt="Gym"
+                                        class="amenity-image">
                                     <h3 class="amenity-title">GYM</h3>
                                 </div>
                                 <div class="amenity-item">
-                                    <img src="img/playground.png" alt="Playground" class="amenity-image">
+                                    <img src="img/playground.png" loading="lazy" decoding="async" alt="Playground"
+                                        class="amenity-image">
                                     <h3 class="amenity-title">PLAYGROUND</h3>
                                 </div>
                                 <div class="amenity-item">
-                                    <img src="img/court.png" alt="Paddle Court" class="amenity-image">
+                                    <img src="img/court.png" loading="lazy" decoding="async" alt="Paddle Court"
+                                        class="amenity-image">
                                     <h3 class="amenity-title">PADDLE COURT</h3>
                                 </div>
                             </div>
@@ -325,28 +343,30 @@
         <div class="location-content">
             <ul class="location-list">
                 <li class="location-item">
-                    <img src="img/alarab.svg" alt="Burj Al Arab" class="location-icon">
+                    <img src="img/alarab.svg" loading="lazy" decoding="async" alt="Burj Al Arab" class="location-icon">
                     <div>
                         <div class="location-time">25 mins</div>
                         <div class="location-name">Burj Al Arab</div>
                     </div>
                 </li>
                 <li class="location-item">
-                    <img src="img/dmall.svg" alt="Dubai Mall" class="location-icon">
+                    <img src="img/dmall.svg" loading="lazy" decoding="async" alt="Dubai Mall" class="location-icon">
                     <div>
                         <div class="location-time">20 mins</div>
                         <div class="location-name">Dubai Mall</div>
                     </div>
                 </li>
                 <li class="location-item">
-                    <img src="img/khalifa.svg" alt="The Burj Khalifa" class="location-icon">
+                    <img src="img/khalifa.svg" loading="lazy" decoding="async" alt="The Burj Khalifa"
+                        class="location-icon">
                     <div>
                         <div class="location-time">20 mins</div>
                         <div class="location-name">The Burj Khalifa</div>
                     </div>
                 </li>
                 <li class="location-item">
-                    <img src="img/airport.svg" alt="Dubai Airport" class="location-icon">
+                    <img src="img/airport.svg" loading="lazy" decoding="async" alt="Dubai Airport"
+                        class="location-icon">
                     <div>
                         <div class="location-time">10 mins</div>
                         <div class="location-name">Dubai Airport</div>
@@ -354,7 +374,7 @@
                 </li>
             </ul>
             <div class="location-map">
-                <img src="img/image 10.png" alt="Dubai Islands Map" />
+                <img src="img/image 10.png" loading="lazy" decoding="async" alt="Dubai Islands Map" />
             </div>
         </div>
         <div class="location-button">
@@ -369,10 +389,10 @@
                 <h2 class="section-5-title">Cooming soon</h2>
             </div>
             <div class="section-5-image">
-                <img src="img/cs.png" alt="Edgewater Residences">
+                <img src="img/cs.png" loading="lazy" decoding="async" alt="Edgewater Residences">
             </div>
             <div class="section-5-image">
-                <img src="img/Az_V2_03.png" alt="Edgewater Residences">
+                <img src="img/Az_V2_03.png" loading="lazy" decoding="async" alt="Edgewater Residences">
             </div>
         </div>
     </section>
@@ -385,62 +405,74 @@
                 <div class="projects-slider">
                     <div class="projects-track">
                         <div class="project-item">
-                            <img src="img/renders/2021-09-14-110.jpg" alt="Render 2021-09-14-110" class="project-image">
+                            <img src="img/renders/2021-09-14-110.jpg" loading="lazy" decoding="async"
+                                alt="Render 2021-09-14-110" class="project-image">
                             <h3 class="project-title">FOUR SEASONS</h3>
                             <p class="project-location">KAZAKHSTAN - 2023</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/Apple City 1.jpg" alt="Render Apple City 1" class="project-image">
+                            <img src="img/renders/Apple City 1.jpg" loading="lazy" decoding="async"
+                                alt="Render Apple City 1" class="project-image">
                             <h3 class="project-title">APPLE CITY</h3>
                             <p class="project-location">KAZAKHSTAN - 2020</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/Bravo Family 1.jpg" alt="Render Bravo Family 1" class="project-image">
+                            <img src="img/renders/Bravo Family 1.jpg" loading="lazy" decoding="async"
+                                alt="Render Bravo Family 1" class="project-image">
                             <h3 class="project-title">BRAVO FAMILY</h3>
                             <p class="project-location">KAZAKHSTAN - 2022</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_01 — 4444.jpg" alt="Render C_01 — 4444" class="project-image">
+                            <img src="img/renders/C_01 — 4444.jpg" loading="lazy" decoding="async"
+                                alt="Render C_01 — 4444" class="project-image">
                             <h3 class="project-title">ELEVEN</h3>
                             <p class="project-location">KAZAKHSTAN - 2025</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_01 1.jpg" alt="Render C_01 1" class="project-image">
+                            <img src="img/renders/C_01 1.jpg" loading="lazy" decoding="async" alt="Render C_01 1"
+                                class="project-image">
                             <h3 class="project-title">PARK CITY</h3>
                             <p class="project-location">KAZAKHSTAN - 2025</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_01.jpg" alt="Render C_01" class="project-image">
+                            <img src="img/renders/C_01.jpg" loading="lazy" decoding="async" alt="Render C_01"
+                                class="project-image">
                             <h3 class="project-title">Q-SMART</h3>
                             <p class="project-location">KAZAKHSTAN - 2023</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_03 44444.jpg" alt="Render C_03 44444" class="project-image">
+                            <img src="img/renders/C_03 44444.jpg" loading="lazy" decoding="async"
+                                alt="Render C_03 44444" class="project-image">
                             <h3 class="project-title">DELTA</h3>
                             <p class="project-location">KAZAKHSTAN - 2024</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_03(1).jpg" alt="Render C_03(1)" class="project-image">
+                            <img src="img/renders/C_03(1).jpg" loading="lazy" decoding="async" alt="Render C_03(1)"
+                                class="project-image">
                             <h3 class="project-title">ANISA</h3>
                             <p class="project-location">KAZAKHSTAN - 2022</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_04.jpg" alt="Render C_04" class="project-image">
+                            <img src="img/renders/C_04.jpg" loading="lazy" decoding="async" alt="Render C_04"
+                                class="project-image">
                             <h3 class="project-title">FOUR SEASONS</h3>
                             <p class="project-location">KAZAKHSTAN - 2023</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_07.jpg" alt="Render C_07" class="project-image">
+                            <img src="img/renders/C_07.jpg" loading="lazy" decoding="async" alt="Render C_07"
+                                class="project-image">
                             <h3 class="project-title">PARK CITY</h3>
                             <p class="project-location">KAZAKHSTAN - 2025</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/C_08.jpg" alt="Render C_08" class="project-image">
+                            <img src="img/renders/C_08.jpg" loading="lazy" decoding="async" alt="Render C_08"
+                                class="project-image">
                             <h3 class="project-title">ANISA</h3>
                             <p class="project-location">KAZAKHSTAN - 2022</p>
                         </div>
                         <div class="project-item">
-                            <img src="img/renders/С_12.jpg" alt="Render С_12" class="project-image">
+                            <img src="img/renders/С_12.jpg" loading="lazy" decoding="async" alt="Render С_12"
+                                class="project-image">
                             <h3 class="project-title">RESPUBLIKA</h3>
                             <p class="project-location">KAZAKHSTAN - 2024</p>
                         </div>
@@ -448,10 +480,10 @@
                 </div>
                 <div class="projects-navigation">
                     <button class="project-nav-arrow project-prev">
-                        <img src="img/leftarr.svg" alt="arrow-left">
+                        <img src="img/leftarr.svg" loading="lazy" decoding="async" alt="arrow-left">
                     </button>
                     <button class="project-nav-arrow project-next">
-                        <img src="img/rightarr.svg" alt="arrow-right">
+                        <img src="img/rightarr.svg" loading="lazy" decoding="async" alt="arrow-right">
                     </button>
                     <div class="projects-button">
                         <a href="https://sat-ns.kz/" target="_blank" class="visit-website-btn">VISIT WEBSITE</a>
@@ -486,12 +518,12 @@
             <div class="footer-section messengers">
                 <div class="messenger-buttons">
                     <a href="https://wa.me/971522436084" target="_blank" class="messenger-btn whatsapp">
-                        <img src="img/watsup.svg" alt="WhatsApp" class="messenger-icon">
+                        <img src="img/watsup.svg" loading="lazy" decoding="async" alt="WhatsApp" class="messenger-icon">
                         <span class="messenger-text">WhatsApp</span>
                     </a>
                     <a href="https://www.instagram.com/mgsdubai?igsh=MXFyNG9nbTBocjBj&utm_source=qr" target="_blank"
                         class="messenger-btn instagram">
-                        <img src="img/inst.svg" alt="Instagram" class="messenger-icon">
+                        <img src="img/inst.svg" loading="lazy" decoding="async" alt="Instagram" class="messenger-icon">
                         <span class="messenger-text">Instagram</span>
                     </a>
                 </div>
@@ -504,12 +536,12 @@
                     <a href="#location" class="footer-nav-link">LOCATION</a>
                 </div> -->
                 <div class="footer-logo">
-                    <img src="img/logo.svg" alt="Buildings" class="logo-icon">
+                    <img src="img/logo.svg" loading="lazy" decoding="async" alt="Buildings" class="logo-icon">
                 </div>
             </div>
         </div>
         <div class="footer-logo-mobile">
-            <img src="img/logo.svg" alt="Buildings" class="logo-icon">
+            <img src="img/logo.svg" loading="lazy" decoding="async" alt="Buildings" class="logo-icon">
         </div>
     </footer>
     </div>
